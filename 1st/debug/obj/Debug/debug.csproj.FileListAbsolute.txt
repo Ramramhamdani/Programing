@@ -1,0 +1,7 @@
+C:\Users\Gebruiker\Documents\GitHub\Programing\1st\debug\bin\Debug\debug.exe.config
+C:\Users\Gebruiker\Documents\GitHub\Programing\1st\debug\bin\Debug\debug.exe
+C:\Users\Gebruiker\Documents\GitHub\Programing\1st\debug\bin\Debug\debug.pdb
+C:\Users\Gebruiker\Documents\GitHub\Programing\1st\debug\obj\Debug\debug.csprojAssemblyReference.cache
+C:\Users\Gebruiker\Documents\GitHub\Programing\1st\debug\obj\Debug\debug.csproj.CoreCompileInputs.cache
+C:\Users\Gebruiker\Documents\GitHub\Programing\1st\debug\obj\Debug\debug.exe
+C:\Users\Gebruiker\Documents\GitHub\Programing\1st\debug\obj\Debug\debug.pdb
