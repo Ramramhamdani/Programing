@@ -14,6 +14,7 @@ namespace _1._0
             int first= int.Parse(Console.ReadLine());
             Console.Write("Enter second number:");
             int second= int.Parse( Console.ReadLine());
+            Console.WriteLine("      ");
             int big;
             int small;
             if (first>second)
