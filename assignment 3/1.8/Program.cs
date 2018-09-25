@@ -17,7 +17,7 @@ namespace _1._8
             Console.Write("Enter number of failures: ");
             int fail = int.Parse(Console.ReadLine());
 
-            if (hours<=10000 && years<=7 && fail<=25)
+            if (hours<=10000 && years<=7 && fail<25)
             {
                 Console.WriteLine("Machine does not need to be replaced.");
             }
