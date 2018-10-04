@@ -14,6 +14,7 @@ namespace _1._1
             Console.Write("Enter a number (1...4):");
             
             int nr = int.Parse(Console.ReadLine());
+            
             switch (nr)
                 {
                 case 1:
@@ -28,6 +29,8 @@ namespace _1._1
                 case 4:
                     Console.WriteLine("spades");
                     break;
+                    //default is like the else
+
                 default:
                     Console.WriteLine("incorrect number!");
                     break;

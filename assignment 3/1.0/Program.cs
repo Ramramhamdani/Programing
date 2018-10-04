@@ -17,6 +17,7 @@ namespace _1._0
             Console.WriteLine("      ");
             int big;
             int small;
+            // 3rd variable in order to not repeating the commands 
             if (first>second)
                 {
                  big = first;

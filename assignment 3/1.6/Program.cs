@@ -14,6 +14,7 @@ namespace _1._6
 
             Console.Write("Enter score: ");
             int score = int.Parse(Console.ReadLine());
+            //for empty space write empty quotes
             Console.Write(" ");
             if (score <= 100 && score >= 90)
             {

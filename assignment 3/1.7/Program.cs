@@ -17,6 +17,7 @@ namespace _1._7
             int length = int.Parse(Console.ReadLine());
             Console.Write("Enter gender (male/female): ");
             string gender = Console.ReadLine();
+            // i cannot make calculations on int variables when i need double answer
             Double square = length * length;
             Double one = square / 10000;
             Double BMI = weight / one;

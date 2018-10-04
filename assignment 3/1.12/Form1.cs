@@ -26,17 +26,17 @@ namespace _1._12
             if (age < 5 || age >=55)
             {
                 final = price * 0;
-                lblprice.Text = final.ToString("0.00");
+                lblprice.Text = final.ToString("€"+"0.00");
             }
             else if (age>=5 && age<=12)
             {
                 final = price * 0.5;
-                lblprice.Text = final.ToString("0.00");
+                lblprice.Text = final.ToString("€" + "0.00");
             }
             else if (age>=13 && age<=54)
             {
                 final = price;
-                lblprice.Text = final.ToString("0.00");
+                lblprice.Text = final.ToString("€0.00");
             }
 
         }

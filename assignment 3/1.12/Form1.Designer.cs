@@ -75,9 +75,8 @@
             this.lblprice.AutoSize = true;
             this.lblprice.Location = new System.Drawing.Point(158, 163);
             this.lblprice.Name = "lblprice";
-            this.lblprice.Size = new System.Drawing.Size(43, 13);
+            this.lblprice.Size = new System.Drawing.Size(0, 13);
             this.lblprice.TabIndex = 4;
-            this.lblprice.Text = "€ 12.00";
             // 
             // Form1
             // 

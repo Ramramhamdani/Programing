@@ -14,6 +14,7 @@ namespace _1._5
             int first = int.Parse(Console.ReadLine());
             Console.Write("Enter second number: ");
             int second = int.Parse(Console.ReadLine());
+            // if the remainder is zero, the numbers are multiple for each other
             if (first%second==0)
             {
                 Console.WriteLine("Number {0} is multiple of {1}", first, second);

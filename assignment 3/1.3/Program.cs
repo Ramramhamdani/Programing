@@ -18,6 +18,7 @@ namespace _1._3
             Console.Write("Enter third number:");
             int third = int.Parse(Console.ReadLine());
 
+            
             if (third<first && third<second)
                 {
                 Console.WriteLine("the third number is the smallest of the three");
