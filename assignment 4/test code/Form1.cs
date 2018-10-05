@@ -19,26 +19,26 @@ namespace test_code
 
         private void btncreate_Click(object sender, EventArgs e)
         {
-            int size = int.Parse(txtSize.Text);
-            string x = "";
-            
-            for (int i = 1; i <= size; i++)
+            int length = int.Parse(txtSize.Text);
+            string output = "";
+            for (int i = 1; i <= length; i++)
             {
-                for (int j = 1; j <= size; j++)
+                for (int j = 1; j <= length; j++)
                 {
-                    if (i==size||j==size||i==1|j==1)
+                    if (j==1||i==1||j==length||i==length)
                     {
-                        x = x + "X";
+                        output = output + "X";
                     }
-                    else 
+                    else
                     {
-                        x = x + " ";
+                        output = output + " ";
+
                     }
-                   
+
                 }
-                x = x + "\n";
+                output = output + "\n";
             }
-            lblsquare.Text = x;
+            lblsquare.Text = output;
         }
 
         private void lblsquare_Click(object sender, EventArgs e)

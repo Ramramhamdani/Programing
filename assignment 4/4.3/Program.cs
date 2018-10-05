@@ -23,6 +23,7 @@ namespace _4._3
 
                     if (count % 5 == 0)
                     {
+                    //if the order of the number divideble by 5 add it to the sum
                         sum = sum + input;
                     }
                 

@@ -10,14 +10,17 @@ namespace _4._2
     {
         static void Main(string[] args)
         {
+            //"target" is the variable of the target number 
             Console.Write("Enter target number: ");
             int target = int.Parse(Console.ReadLine());
+
             int count = 0;
             Console.Write("Enter a number: ");
             int input = int.Parse(Console.ReadLine());
 
             while(input !=0)
             {
+                //if the input equals the target number the loop counts 
                 if (input==target)
                 {
                     count++;
