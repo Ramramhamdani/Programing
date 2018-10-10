@@ -11,26 +11,23 @@ namespace test
         static void Main(string[] args)
 
         {
-            int input=1;
+            int input = 1;
             int[] numbers = new int[20];
-            for (int i = 1; i < numbers.Length; i++)
+            int count = 0;
+            while(input!=0&&count<20)
             {
-
-               
-                if (input != 0)
-                {
-                    Console.Write("Enter a number (0=stop): ");
-                    input = int.Parse(Console.ReadLine());
-                }
-                numbers[i] = input;
+                // fill the array with number from the user
+                Console.Write("Enter a number (0=stop): ");
+                input = int.Parse(Console.ReadLine());
+                count++;
             }
-        
             Console.Write("Enter a search value: ");
             int Search = int.Parse(Console.ReadLine());
             int occurence = 0;
-            foreach (int item in numbers)
+            //search the number
+            for(int i=0;i<numbers.Length;i++)
             {
-                if (item == Search)
+                if (i == Search)
                 {
                     occurence++;
                 }

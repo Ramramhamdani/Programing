@@ -10,11 +10,11 @@ namespace _5._4
     {
         static void Main(string[] args)
         {
-            int input;
+            
             int[] numbers = new int[20];
             for (int i = 1; i < numbers.Length; i++)
             {
-               
+               // fill the array with number from the user
                 Console.Write("Enter a number (0=stop): ");
                 numbers[i] = int.Parse(Console.ReadLine());
                 if (numbers[i] == 0)
@@ -26,6 +26,7 @@ namespace _5._4
             Console.Write("Enter a search value: ");
             int Search = int.Parse(Console.ReadLine());
             int occurence = 0;
+            //search the number
             foreach (int item in numbers)
             {
                 if (item==Search)

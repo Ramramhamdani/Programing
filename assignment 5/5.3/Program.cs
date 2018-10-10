@@ -17,6 +17,7 @@ namespace _5._3
             Console.WriteLine();
             int count = 1;
             Double sum = 0;
+            //the name of the student with the highest grade
             string maxGrade = "";
             string[] students = new string[number];
             Double[] grades = new Double[number];
@@ -43,6 +44,8 @@ namespace _5._3
             {
                 if (max==grades[i])
                 { 
+                    //i is the munber of the highest number in the grades array
+                    //i is the same number of the student who has the highest grade
                     maxGrade = students[i];
                 }
             }
@@ -53,6 +56,7 @@ namespace _5._3
 
             for (int i = 0; i < students.Length; i++)
             {
+                //print the arrays
                 Console.WriteLine("Grade for student {0} ({1}) is: {2}", students[i], course, grades[i]);
             }
             Console.ReadKey();

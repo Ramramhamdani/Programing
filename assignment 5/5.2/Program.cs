@@ -35,6 +35,7 @@ namespace _5._2
             Console.WriteLine();
             Console.WriteLine("Smallest number = {0}", min);
             Console.WriteLine("number of occurance = {0}", occurence);
+            //test part
             Console.WriteLine("Try again! [Y/N]");
             string answer = Console.ReadLine();
             if (answer == "y")
