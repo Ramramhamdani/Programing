@@ -25,9 +25,7 @@ namespace _6._4
             nrOfSemiColons = 0;
             nrOfFullStops = 0;
             nrOfCommas = 0;
-            string semi = ";";
-            string full = ".";
-            string comma = ",";
+           
             foreach (char c in text)
             {
                 if (c == ';')
