@@ -23,7 +23,7 @@ namespace _6._3
                     Console.WriteLine("{0} is a leap year.", year);
                 }
                 // if the year is no divividable by 400 or 4 but dividable by 100 it's not leap 
-                else if (LeapYear==false)
+                else // if (LeapYear==false)
                 {
                     Console.WriteLine("{0} is not a leap year.", year);
                 }
@@ -38,12 +38,12 @@ namespace _6._3
         static bool IsLeapYear(int year)
         {
             bool LeapYear = true;
-            if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0)
+            if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
             {
                 LeapYear = true;
             }
             // if the year is no divividable by 400 or 4 but dividable by 100 it's not leap 
-            else if (year % 400 != 0 || year % 4 != 0 && year % 100 == 0)
+            else // if (year % 400 != 0 || year % 4 != 0 && year % 100 == 0)
             {
                 LeapYear = false;
             }

@@ -82,10 +82,10 @@ namespace _4._6
             result = num1 * num2;
             return result;
         }
-        static double Division(double num1 , double num2)
+        static double Division(int num1, int num2)
         {
-            double result = 0;
-            result = num1 / num2;
+       //     double result;
+            double result = num1 / (double)num2;
             return result;
         }
     }

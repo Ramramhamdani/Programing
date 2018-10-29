@@ -45,22 +45,23 @@ namespace _6._7
         private void button1_Click(object sender, EventArgs e)
         {
             double degree = double.Parse(txtnumber.Text);
-            double result=0;
-            if (rbtnCtoF.Checked==true)
+            double result = 0;
+            if (rbtnCtoF.Checked)
             {
                 result = CtoF(degree);
                 lblResult.Text = result.ToString("0.00");
             }
-            else if (rbtnCtoK.Checked==true)
+            else if (rbtnCtoK.Checked)
             {
                 result = Ctok(degree);
                 lblResult.Text = result.ToString("0.00");
             }
-            else if (rbtnFtoC.Checked==true)
+            else if (rbtnFtoC.Checked)
             {
                 result = FtoC(degree);
-                lblResult.Text = result.ToString("0.00");   
+                lblResult.Text = result.ToString("0.00");
             }
+            // .... result printing
         }
         static double CtoF(double number)
         {
@@ -69,13 +70,13 @@ namespace _6._7
         }
         static double Ctok(double number)
         {
-            
+
             double result = number + 273;
             return result;
         }
         static double FtoC(double number)
         {
-            double result = ((number - 32) * (5)) / 9;
+            double result = ((number - 32) * 5) / 9;
             return result;
         }
 
