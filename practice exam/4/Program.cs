@@ -10,6 +10,7 @@ namespace _4
     {
         static void Main(string[] args)
         {
+            //generating a number alwayes outside the loop
             Random rnd = new Random();
             int number = 1;
             while (number != 0)
