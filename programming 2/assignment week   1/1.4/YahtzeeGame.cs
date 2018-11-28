@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _1._4
+﻿namespace _1._4
 {
     class YahtzeeGame
     {
@@ -15,12 +9,12 @@ namespace _1._4
         }
         public void Throw()
         {
-            
+
             for (int i = 0; i < dices.Length; i++)
             {
                 Dice die = new Dice();
                 die.Throw();
-                dices[i]=die;
+                dices[i] = die;
             }
         }
         public void DisplayValues()
@@ -32,19 +26,53 @@ namespace _1._4
         }
         public bool Yahtzee()
         {
-            bool same=false;
+            int first = dices[0].value;
+            
             for (int i = 0; i < dices.Length; i++)
             {
-                if (dices[0]==dices[1] && dices[0] == dices[2]&& dices[0] == dices[3]&& dices[0] == dices[4])
+                if (dices[i].value!=first)
                 {
-                    same = true;
-                }
-                else
-                {
-                    same = false;
+                    return false;
                 }
             }
-            return same;
+            return true;
         }
+        public bool ThreeOfAKind()
+        {
+            bool three = false; ;
+            int[] nr = new int[6];
+            foreach (Dice dice in dices)
+            {
+                nr[dice.value - 1]++;
+            }
+            foreach (int num in nr)
+            {
+                if (num>2)
+                {
+                    three = true;
+                }
+            }
+            
+            return three;
+        }
+        public bool FourOfAKind()
+        {
+            bool four = false; ;
+            int[] nr = new int[6];
+            foreach (Dice dice in dices)
+            {
+                nr[dice.value - 1]++;
+            }
+            foreach (int num in nr)
+            {
+                if (num> 3)
+                {
+                    four = true;
+                }
+            }
+
+            return four;
+        }
+
     }
 }

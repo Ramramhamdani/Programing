@@ -15,17 +15,38 @@ namespace _1._4
         }
         void Satrt()
         {
-            
             YahtzeeGame yahtzeeGame = new YahtzeeGame();
             yahtzeeGame.Init();
-
-            yahtzeeGame.Throw();
-            yahtzeeGame.DisplayValues();
+            PlayYahtzee(yahtzeeGame);
             Console.WriteLine();
-
-            yahtzeeGame.Throw();
-            yahtzeeGame.DisplayValues();
+           
             Console.ReadKey();
+        }
+        void PlayYahtzee(YahtzeeGame game)
+        {
+            int three=0;
+            int four = 0;
+            int nrOfAttempts = 0;
+            do
+            {
+                game.Throw();
+                game.DisplayValues();
+                nrOfAttempts++;
+                Console.WriteLine();
+                if (game.ThreeOfAKind())
+                {
+                    three++;
+                }
+                else if (game.FourOfAKind())
+                {
+                    four++;
+                }
+                
+            } while ((!game.Yahtzee()) );
+           
+            Console.WriteLine("Number of attempts needed (Yahtzee): {0}", nrOfAttempts);
+            Console.WriteLine("three of a kind {0}", three);
+            Console.WriteLine("four of a kind {0}", four);
         }
     }
 }

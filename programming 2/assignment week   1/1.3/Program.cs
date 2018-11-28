@@ -13,7 +13,7 @@ namespace _1._3
         {
             person person = ReadPerson();
             PrintPerson(person);
-            CelebrateBirthday(person);
+            CelebrateBirthday(ref person);
             PrintPerson(person);
             person[] People = new person[3];
             for (int i = 0; i < People.Length; i++)
@@ -24,7 +24,7 @@ namespace _1._3
             {
                 PrintPerson(People[i]);
             }
-            
+
             Console.ReadKey();
         }
         person ReadPerson()
@@ -91,7 +91,7 @@ namespace _1._3
         }
         void PrintGender(GenderType gender)
         {
-            string output="";
+            string output = "";
             if (gender == GenderType.male)
             {
                 output = "m";
@@ -102,15 +102,9 @@ namespace _1._3
             }
             Console.WriteLine(" (" + output + ")");
         }
-        void CelebrateBirthday(person person)
+        void CelebrateBirthday(ref person person)
         {
-            int age = person.Age;
-            age = age + 1;
-            person.Age = new person().Age;
-            
-            person.Age = age;
-            
-            Console.WriteLine("Next year you'll be {0}", age);
+            person.Age++;
            
         }
     }
