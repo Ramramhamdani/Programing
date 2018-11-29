@@ -24,10 +24,18 @@ namespace assignment_3
             {
                 Console.WriteLine("row score!");
             }
+            else
+            {
+                Console.WriteLine("no row score!");
+            }
             ScoreColumnPresent(playingfield);
             if (ScoreColumnPresent(playingfield))
             {
                 Console.WriteLine("column score!");
+            }
+            else
+            {
+                Console.WriteLine("no column score!");
             }
             Console.ReadKey();
             
@@ -35,7 +43,6 @@ namespace assignment_3
         void InitCandies(RegularCandies[,] candies)
         {
             Random rnd = new Random();
-            string n;
             for (int row = 0; row < candies.GetLength(0); row++)
             {
                 for (int col = 0; col < candies.GetLength(1); col++)
@@ -82,12 +89,12 @@ namespace assignment_3
         }
         bool ScoreRowPresent(RegularCandies[,] candies)
         {
-            int count = 0;
+            int count = 1;
             for (int row = 0; row < candies.GetLength(0); row++)
             {
                 for (int col = 0; col < candies.GetLength(1); col++)
                 {
-                    if ((col==candies.GetLength(1))||(col==0)||(col==1))
+                    if ((col==0)||(col==1))
                     {
                         continue;
                     }
@@ -95,8 +102,12 @@ namespace assignment_3
                     {
                         count++;
                     }
+                    else
+                    {
+                        count = 1;
+                    }
 
-                    if (count>=3)
+                    if (count>=2)
                     {
                         return true;
                     }
@@ -106,12 +117,12 @@ namespace assignment_3
         }
         bool ScoreColumnPresent(RegularCandies[,] candies)
         {
-            int count = 0;
+            int count = 1;
             for (int row = 0; row < candies.GetLength(0); row++)
             {
                 for (int col = 0; col < candies.GetLength(1); col++)
                 {
-                    if ((row == candies.GetLength(1)) || (row == 0) || (row == 1))
+                    if ((row == 0) || (row == 1))
                     {
                         continue;
                     }
@@ -120,7 +131,7 @@ namespace assignment_3
                         count++;
                     }
 
-                    if (count >= 3)
+                    if (count >= 2)
                     {
                         return true;
                     }
