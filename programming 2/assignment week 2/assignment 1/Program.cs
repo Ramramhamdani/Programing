@@ -73,20 +73,14 @@ namespace assignment_1
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                     }
-                    else if (row + col == matrix.GetLength(0) - 1)
+                    if (row + col == matrix.GetLength(0) - 1)
                     {
                         Console.BackgroundColor = ConsoleColor.Yellow;
                     }
-                    else
-                    {
-                        Console.ResetColor();
-                    }
-                    if ((row == col) && (row + col == matrix.GetLength(0) - 1))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.BackgroundColor = ConsoleColor.Yellow;
-                    }
+                   
+                    
                     Console.Write(matrix[row, col].ToString().PadLeft(3) + " ");
+                    Console.ResetColor();
                 }
                 Console.WriteLine();
             }

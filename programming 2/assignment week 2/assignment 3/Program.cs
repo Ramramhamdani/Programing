@@ -92,15 +92,12 @@ namespace assignment_3
             int count = 1;
             for (int row = 0; row < candies.GetLength(0); row++)
             {
-                for (int col = 0; col < candies.GetLength(1); col++)
+                for (int col = 2; col < candies.GetLength(1); col++)
                 {
-                    if ((col==0)||(col==1))
+                  //...  
+                    if ((candies[row, col] == candies[row, col - 2]) && (candies[row, col] == candies[row, col - 1]))
                     {
-                        continue;
-                    }
-                    else if ((candies[row, col] == candies[row, col - 2]) && (candies[row, col] == candies[row, col - 1]))
-                    {
-                        count++;
+                        return true;
                     }
                     else
                     {
