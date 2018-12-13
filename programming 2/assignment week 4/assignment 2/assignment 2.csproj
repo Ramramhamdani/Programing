@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2855C0B9-F540-49EF-8085-15352F9527A4}</ProjectGuid>
+    <ProjectGuid>{B0575CEC-DE42-485F-A99F-3DD801125EED}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>assignment_1</RootNamespace>
-    <AssemblyName>assignment 1</AssemblyName>
+    <RootNamespace>Assignment_2</RootNamespace>
+    <AssemblyName>Assignment 2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="person.cs" />
+    <Compile Include="HangmanGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
