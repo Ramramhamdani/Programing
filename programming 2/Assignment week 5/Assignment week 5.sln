@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTools Aplication", "assignment 1\MyTools Aplication.csproj", "{013783FB-503B-43D6-A886-C01CD4CD11AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTools", "MyTools\MyTools.csproj", "{A9C87C87-444A-4479-B465-93E96B3060E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandyCrush-application", "CandyCrush-application\CandyCrush-application.csproj", "{7AF6E574-F999-4732-B107-DD2085C32791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandyCrushLogic", "CandyCrushLogic\CandyCrushLogic.csproj", "{BE27DD5B-4E92-4757-8DF8-E881833E288B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Translation", "Translation\Translation.csproj", "{B56D6621-9F57-4142-AF1A-7BB705359C14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lingo", "lingo\lingo.csproj", "{9290FFB3-C562-471B-9E61-CD062F85C76C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{013783FB-503B-43D6-A886-C01CD4CD11AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013783FB-503B-43D6-A886-C01CD4CD11AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013783FB-503B-43D6-A886-C01CD4CD11AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013783FB-503B-43D6-A886-C01CD4CD11AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C87C87-444A-4479-B465-93E96B3060E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C87C87-444A-4479-B465-93E96B3060E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C87C87-444A-4479-B465-93E96B3060E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C87C87-444A-4479-B465-93E96B3060E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF6E574-F999-4732-B107-DD2085C32791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF6E574-F999-4732-B107-DD2085C32791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF6E574-F999-4732-B107-DD2085C32791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF6E574-F999-4732-B107-DD2085C32791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE27DD5B-4E92-4757-8DF8-E881833E288B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE27DD5B-4E92-4757-8DF8-E881833E288B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE27DD5B-4E92-4757-8DF8-E881833E288B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE27DD5B-4E92-4757-8DF8-E881833E288B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56D6621-9F57-4142-AF1A-7BB705359C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56D6621-9F57-4142-AF1A-7BB705359C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56D6621-9F57-4142-AF1A-7BB705359C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56D6621-9F57-4142-AF1A-7BB705359C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9290FFB3-C562-471B-9E61-CD062F85C76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9290FFB3-C562-471B-9E61-CD062F85C76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9290FFB3-C562-471B-9E61-CD062F85C76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9290FFB3-C562-471B-9E61-CD062F85C76C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFEF3045-7FDD-4911-9570-03EC1CE79E56}
+	EndGlobalSection
+EndGlobal
