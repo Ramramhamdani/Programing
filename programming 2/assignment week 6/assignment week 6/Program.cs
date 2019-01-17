@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace assignment_week_6
 {
@@ -41,15 +37,15 @@ namespace assignment_week_6
             Console.WriteLine();
             for (int row = 0; row < chessboard.GetLength(0); row++)
             {
-                Console.Write((row+1)+" ");
+                Console.Write((row + 1) + " ");
                 for (int col = 0; col < chessboard.GetLength(1); col++)
                 {
-                    
-                    if ((row+col)%2==0)
+
+                    if ((row + col) % 2 == 0)
                     {
                         Console.BackgroundColor = ConsoleColor.DarkYellow;
                     }
-                    else 
+                    else
                     {
                         Console.BackgroundColor = ConsoleColor.Gray;
                     }
@@ -61,6 +57,18 @@ namespace assignment_week_6
                     Console.ResetColor();
                 }
                 Console.WriteLine();
+            }
+        }
+        void PutChessPieces(ChessPiece[,] chessboard)
+        {
+            ChessPieceType[] order = { ChessPieceType.Rook, ChessPieceType.Knight, ChessPieceType.Bishop, ChessPieceType.king,
+                ChessPieceType.queen, ChessPieceType.Bishop, ChessPieceType.Knight, ChessPieceType.Rook };
+            for (int row = 0; row < chessboard.GetLength(0); row++)
+            {
+                for (int col = 0; col < chessboard.GetLength(1); col++)
+                {
+
+                }
             }
         }
     }

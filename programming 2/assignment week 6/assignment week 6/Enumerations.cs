@@ -15,6 +15,6 @@ namespace assignment_week_6
     }
     enum ChessPieceType
     {
-        Pawn ,Rook ,Knight ,king, queen
+        Pawn ,Rook ,Knight ,king, queen, Bishop
     }
 }
