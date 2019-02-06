@@ -17,6 +17,7 @@ namespace lingo
             words = ReadWords("words.txt");
             string lingoWord = ChooseWord(words);
             PlayLingo(lingoWord);
+            Console.ReadKey();
         }
         List<string> ReadWords(string filename)
         {
