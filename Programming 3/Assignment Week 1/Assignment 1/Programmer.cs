@@ -15,10 +15,15 @@ namespace Assignment_1
             specialty = (Specialty)Enum.Parse(typeof(Specialty), Console.ReadLine().ToLower());
             // Is this the right way to convert string to Enum??
         }
+        public Programmer(Specialty specialty)
+        {
 
+        }
         public void Print()
         {
             Console.Write($"Name: {name}, Specialty: {specialty}");
         }
+        
+        
     }
 }
