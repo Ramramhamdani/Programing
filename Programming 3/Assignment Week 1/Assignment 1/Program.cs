@@ -16,18 +16,24 @@ namespace Assignment_1
         void Start()
         {
             List<Programmer> programmers = new List<Programmer>();
+            Team team = new Team();
             int nr = 0;
             while (nr!=4)
             {
                 Programmer programmer = new Programmer();
-                programmers.Add(programmer);
+                //programmers.Add(programmer);
+                team.AddProgrammer(programmer);
                 nr++;
             }
-            foreach (Programmer pro in programmers)
-            {
-                pro.Print();
-                Console.WriteLine();
-            }
+            team.PrintAllTeam();
+            Programmer programmer1 = new Programmer("Peter");
+            team.AddProgrammer(programmer1);
+            team.PrintAllTeam();
+            //foreach (Programmer pro in programmers)
+            //{
+            //    pro.Print();
+            //    Console.WriteLine();
+            //}
             Console.ReadKey();
         }
     }

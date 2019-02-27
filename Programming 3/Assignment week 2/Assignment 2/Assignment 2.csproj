@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31463ED1-EB0E-40D4-A323-F2B75685D8AE}</ProjectGuid>
+    <ProjectGuid>{D23A7ED6-0347-407E-8C7B-316D01006DFB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>assignment_week_6</RootNamespace>
-    <AssemblyName>assignment week 6</AssemblyName>
+    <RootNamespace>Assignment_2</RootNamespace>
+    <AssemblyName>Assignment 2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChessPiece.cs" />
-    <Compile Include="Enumerations.cs" />
-    <Compile Include="Position.cs" />
+    <Compile Include="DeckOfCards.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

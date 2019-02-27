@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace assignment_week_6
 {
-    class ChessPiece
+    public class ChessPiece
     {
-        ChessPieceColor color;
-        ChessPieceType type;
+        public ChessPieceColor color;
+        public ChessPieceType type;
     }
 }

@@ -23,7 +23,11 @@ namespace Assignment_1
         {
             Console.Write($"Name: {name}, Specialty: {specialty}");
         }
-        
+        public Programmer(string name)
+        {
+            this.name = name;
+            specialty = Specialty.unknown;
+        }
         
     }
 }

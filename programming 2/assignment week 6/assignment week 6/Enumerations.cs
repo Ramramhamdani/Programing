@@ -9,11 +9,11 @@ namespace assignment_week_6
     class Enumerations
     {
     }
-    enum ChessPieceColor
+    public enum ChessPieceColor
     {
         black,white
     }
-    enum ChessPieceType
+    public enum ChessPieceType
     {
         Pawn ,Rook ,Knight ,king, queen, Bishop
     }

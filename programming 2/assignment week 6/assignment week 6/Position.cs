@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_1
+namespace assignment_week_6
 {
-    class specialties
+    class Position
     {
-      
-    }
-    public enum Specialty
-    {
-        java, csharp, html, php,unknown
+        public int fieldRow;
+        public int fieldCol;
     }
 }
