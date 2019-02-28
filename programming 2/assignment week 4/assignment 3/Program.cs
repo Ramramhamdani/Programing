@@ -25,6 +25,7 @@ namespace assignment_3
             word = word.ToLower();
             if (line.Contains(word))
             {
+                DisplayWordInLine(line, word);
                 return true;
             }
             return false;
@@ -40,7 +41,7 @@ namespace assignment_3
                 if (WordInLine(line, word))
                 {
                     count++;
-                    DisplayWordInLine(line, word);
+                    //DisplayWordInLine(line, word);
                 }
             }
             reader.Close();
@@ -50,27 +51,44 @@ namespace assignment_3
         {
             int start = line.IndexOf(word);
             int length = word.Length;
-            string found = line.Substring(line.IndexOf(word),word.Length);
-            int chIndex;
-            foreach (char item in line)
+            if (line.Contains(word))
             {
-                chIndex = line.IndexOf(item);
-                if (chIndex<start)
-                {
-                    Console.ResetColor();
-                }
-                else if (line.IndexOf(item)==start)
+                string found = line.Substring(line.IndexOf(word), word.Length);
+            }
+            //int chIndex;
+            //foreach (char item in line)
+            //{
+            //    chIndex = line.IndexOf(item);
+            //    //if (chIndex<start)
+            //    //{
+            //    //    Console.ResetColor();
+            //    //}
+            //    if (chIndex==start)
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Red;
+            //        Console.Write(line.Substring(chIndex, length));
+            //    }
+            //    else
+            //    {
+            //        Console.ResetColor();
+            //    }
+            //    //else if (chIndex>(start+length))
+            //    //{
+            //    //    Console.ResetColor();
+            //    //}
+            //    Console.Write(item);
+            //}
+
+            for (int i = 0; i < line.Length; i++)
+            {
+                Console.ResetColor();
+                if (i >= start && start + length > i)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(line.Substring(start, length));
                 }
-                else if (line.IndexOf(item)>(start+length))
-                {
-                    Console.ResetColor();
-                }
-                Console.Write(item);
+                Console.Write(line[i]);
             }
+
         }
-        //how to colour a word in the string?
     }
 }

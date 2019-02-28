@@ -7,16 +7,10 @@ namespace assignment_3
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Program program = new Program();
-                program.start();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error occured! {0}", e);
-                Console.ReadKey();
-            }
+            Program program = new Program();
+            program.start();
+            Console.ReadKey();
+
         }
         void start()
         {
@@ -182,7 +176,7 @@ namespace assignment_3
                             break;
                     }
                     writer.Write(input);
-                   
+
                     if (col != 8)
                     {
                         writer.Write(" ");
@@ -204,23 +198,21 @@ namespace assignment_3
                 line = line + reader.ReadLine();
             }
             string[] numberStrings = line.Split(' ');
-            for (int i = 0; i < numberStrings.Length; i++)
+            for (int i = 0; i < numberStrings.Length-1; i++)
             {
                 if (numberStrings[i] != " ")
                 {
                     num[i] = int.Parse(numberStrings[i]);
-                    //how to fill the array from a file?
                 }
             }
+            int n = 0;
             for (int row = 0; row < playing.GetLength(0); row++)
             {
                 for (int col = 0; col < playing.GetLength(1); col++)
                 {
-
-
-                    RegularCandies candy = (RegularCandies)num[col];
+                    RegularCandies candy = (RegularCandies)num[n];
                     playing[row, col] = candy;
-
+                    n++;
                 }
             }
             reader.Close();

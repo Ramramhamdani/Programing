@@ -23,7 +23,7 @@ namespace Translation
         Dictionary<string, string> ReadWords(string filename)
         {
             StreamReader stream = new StreamReader(filename);
-            Dictionary<string, string> translater = new Dictionary<string, string>();
+            Dictionary<string, string> translator = new Dictionary<string, string>();
             string line = " ";
             while (!stream.EndOfStream)
             {
@@ -34,9 +34,10 @@ namespace Translation
 
             for (int i = 0; i < words.Length - 1; i++)
             {
-                translater.Add(words[i], words[i + 1]);
+                translator.Add(words[i], words[i + 1]);
+                i++;
             }
-            return translater;
+            return translator;
         }
         void TranslateWords(Dictionary<string, string> words)
         {
