@@ -76,6 +76,7 @@ namespace Assignment_2
                 }
                 Console.Write("Entered letters: ");
                 DisplayLetters(enteredLetters);*/
+                // method
                 string word = "";
                 foreach (char hrf in hangman.secretWord)
                 {

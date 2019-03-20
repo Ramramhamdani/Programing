@@ -21,7 +21,7 @@ namespace Assginment_1
             foreach (Book item in bookStoreItems)
             {
                 item.Print();
-                totalPrice += item.price;
+                totalPrice += item.Calculated;
             }
             Console.WriteLine("\n"+$"Total sales price: {totalPrice}");
         }
