@@ -10,6 +10,10 @@ namespace Assignment_1
         public int Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
+        public Book()
+        {
+
+        }
 
         public Book(int id, string title, string author)
         {

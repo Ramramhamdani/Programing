@@ -22,6 +22,19 @@ namespace Assignment_1
             }
             reader.Close();
             connection.Close();
+            return books;
+        }
+
+        private Book ReadBook(SqlDataReader reader)
+        {
+            List<Book> books = new List<Book>();
+            Book book = new Book
+            {
+                Id = (int)reader["ID"],
+                Title = (string)reader["Title"],
+                Author = (string)reader["Author"]
+            };
+            return book;
         }
     }
 }
