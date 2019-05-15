@@ -4,18 +4,33 @@ namespace Assignment_2
 
     class Ticket
     {
-        public string MovieName { get { return ""; } set { MovieName = value; } }
+        private string movieName;
+        public string MovieName
+        {
+            get
+            {
+                return movieName;
+            }
+            set
+            {
+                if (movieName != "")
+                {
+                    movieName = value;
+                }
+            }
+        }
+        private int cinemaRoom;
         public int CinemaRoom
         {
             get
             {
-                return CinemaRoom;
+                return cinemaRoom;
             }
             set
             {
-                if (CinemaRoom >= 1 || CinemaRoom <= 5)
+                if (cinemaRoom >= 1 || cinemaRoom <= 5)
                 {
-                    CinemaRoom = value;
+                    cinemaRoom = value;
                 }
                 else
                 {
@@ -23,7 +38,7 @@ namespace Assignment_2
                 }
             }
         }
-        public DateTime startTime;
+        private DateTime startTime;
         public DateTime StartTime
         {
             get { return startTime; }
@@ -31,7 +46,7 @@ namespace Assignment_2
             {
                 if (startTime.Minute == 0 || startTime.Minute == 30)
                 {
-                    StartTime = value;
+                    startTime = value;
                 }
                 else
                 {
@@ -39,29 +54,42 @@ namespace Assignment_2
                 }
             }
         }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
+        private int minimumAge;
         public int MinimumAge
         {
-            get => MinimumAge;
+            get => minimumAge;
             set
             {
-                if (MinimumAge == 0 || MinimumAge == 6 || MinimumAge == 9 || MinimumAge == 12 || MinimumAge == 16)
+                if (value == 0 || value == 6 || value == 9 || value == 12 || value == 16)
                 {
-                    MinimumAge = value;
+                    minimumAge = value;
                 }
             }
         }
         private bool discount;
         public bool Discount
         {
-            get { return discount = true; }
-            set
+            get
             {
                 if (StartTime.DayOfWeek == DayOfWeek.Monday || StartTime.DayOfWeek == DayOfWeek.Tuesday)
                 {
-                    Discount = value;
+                    return discount = true;
                 }
+                return discount = false;
             }
+            set
+            {
+
+            }
+        }
+        public Ticket(string movieName, int cinemaRoom, DateTime startTime, int minimumAge, double price)
+        {
+            this.movieName = movieName;
+            this.cinemaRoom = cinemaRoom;
+            this.startTime = startTime;
+            this.minimumAge = minimumAge;
+            Price = price;
         }
     }
 

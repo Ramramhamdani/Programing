@@ -19,21 +19,22 @@ namespace Assignment_2
             }
             get
             {
-                return Age = Date.Year - age;
+                return Age = date.Year - Date.Year;
             }
         }
         public bool Discount
         {
             get
             {
-                return true;
+                if (DateOfBirth<10)
+                {
+                    return true;
+                }
+                return false;
             }
             set
             {
-                if (Age<10)
-                {
-                    Discount = value;
-                }
+
             }
         }
         public Customer(string name,int age,DateTime date,DateTime dateOfBirth)
@@ -41,7 +42,7 @@ namespace Assignment_2
             this.name = name;
             this.age = age;
             this.date = date;
-            this.Date = dateOfBirth;
+            Date = dateOfBirth.Date;
         }
     }
 }

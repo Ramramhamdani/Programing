@@ -13,11 +13,11 @@ namespace Assginment_1
         {
             get
             {
-                return calculated;
+                return Price * Count;
             }
             private set
             {
-                calculated = Price * Count;
+                calculated = value;
             }
         }
 
@@ -30,7 +30,7 @@ namespace Assginment_1
         }
         public virtual void Print()
         {
-            Console.WriteLine($"[Book]'{Title}' by {Author}, " + "{0:0.00}, ({1}X)", Calculated, Count);
+            Console.WriteLine($"[Book]'{Title}' by {Author}, " + "{0:0.00}, ({1}X)", Price, Count);
         }
     }
 }

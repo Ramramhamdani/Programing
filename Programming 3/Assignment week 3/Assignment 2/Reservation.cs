@@ -6,7 +6,8 @@ namespace Assignment_2
     class Reservation
     {
         public Customer Customer { get; set; }
-        public List<Ticket> Tickets { get; set; }
+        private List<Ticket> tickets = new List<Ticket>();
+        public List<Ticket> Tickets { get { return tickets; } set { tickets = value; } }
         private double totalPrice;
         public double TotalPrice
         {
@@ -29,7 +30,16 @@ namespace Assignment_2
                 }
                 return totalPrice;
             }
-            set { TotalPrice = value; }
+            set { totalPrice = value; }
+        }
+        public Reservation(Customer customer, Ticket ticket)
+        {
+            Customer = customer;
+            Tickets.Add(ticket);
+        }
+        public void AddTicket(Ticket ticket)
+        {
+            Tickets.Add(ticket);
         }
     }
 }
