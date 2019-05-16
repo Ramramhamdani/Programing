@@ -8,6 +8,7 @@ namespace Assginment_1
 {
     class Magazine:Book
     {
+    // only this field should be property
         DayOfWeek releasDay;
         public Magazine(string title, string author, double price,DayOfWeek dayOfWeek,int count)
             :base(title,author,price,count)
