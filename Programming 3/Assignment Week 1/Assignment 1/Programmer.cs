@@ -9,6 +9,8 @@ namespace Assignment_1
 
         public Programmer()
         {
+            // there should be parameters passed no reading in the constructor
+            // parameters name, especialty
             Console.Write("Enter name: ");
             name = Console.ReadLine();
             Console.Write("Enter specialty: ");
