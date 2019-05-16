@@ -4,6 +4,8 @@ namespace Assginment_1
 {
     class Book
     {
+        // this class should be inhereted from the book store item and it should has only the unique properties 
+        // class bookStoreItem should be present
         public string Title { get; set; }
         public string Author { get; private set; }
         public int Count { get; set; }
