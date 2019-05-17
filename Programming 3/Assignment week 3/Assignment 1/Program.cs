@@ -24,7 +24,7 @@ namespace Assginment_1
             bookStore.AddBooks(bookStore, book2);
             bookStore.AddBooks(bookStore, book3);
             bookStore.AddBooks(bookStore, magazine);
-            bookStore.PrintCompleteStock(bookStore);
+            bookStore.PrintCompleteStock();
             Console.ReadKey();
         }
     }

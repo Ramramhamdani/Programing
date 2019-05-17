@@ -1,26 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assginment_1
 {
-    class Magazine:Book
+    class Magazine : BookstoreItem
     {
-    // only this field should be property
-        DayOfWeek releasDay;
-        public Magazine(string title, string author, double price,DayOfWeek dayOfWeek,int count)
-            :base(title,author,price,count)
+        public DayOfWeek ReleasDay { get; set; }
+        public Magazine(string title, string author, double price, DayOfWeek dayOfWeek, int count)
+            : base(title, count, price)
         {
             Title = title;
             Price = price;
-            releasDay = dayOfWeek;
+            ReleasDay = dayOfWeek;
         }
         public override void Print()
         {
             //base.Print();
-            Console.WriteLine($"[Magazine]'{Title}' release day: {releasDay}, " + "{0:0.00}, ({1}X)", Calculated,Count);
+            Console.WriteLine($"[Magazine]'{Title}' release day: {ReleasDay}, " + "{0:0.00}, ({1}X)", Calculated, Count);
         }
     }
 }

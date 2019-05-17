@@ -8,18 +8,18 @@ namespace Assginment_1
 {
     class BookStore
     {
-        private List<Book> bookStoreItems = new List<Book>();
+        private List<BookstoreItem> bookStoreItems = new List<BookstoreItem>();
         // only parameter book
-        public BookStore AddBooks(BookStore bookStore, Book book)
+        public BookStore AddBooks(BookStore bookStore, BookstoreItem bookstoreItem)
         {
-            bookStoreItems.Add(book);
+            bookStoreItems.Add(bookstoreItem);
             return bookStore;
         }
-        public void PrintCompleteStock(BookStore bookStore)
+        public void PrintCompleteStock()
         {
             // I dont need parameters in print method
             double totalPrice = 0;
-            foreach (Book item in bookStoreItems)
+            foreach (BookstoreItem item in bookStoreItems)
             {
                 item.Print();
                 totalPrice += item.Calculated;
