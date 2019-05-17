@@ -20,7 +20,11 @@ namespace Assignment_1
             int nr = 0;
             while (nr!=4)
             {
-                Programmer programmer = new Programmer();
+                Console.Write("Enter name: ");
+                string name = Console.ReadLine();
+                Console.Write("Enter specialty: ");
+                Specialty specialty = (Specialty)Enum.Parse(typeof(Specialty), Console.ReadLine().ToLower());
+                Programmer programmer = new Programmer(specialty, name);
                 //programmers.Add(programmer);
                 team.AddProgrammer(programmer);
                 nr++;

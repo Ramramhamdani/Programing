@@ -7,19 +7,10 @@ namespace Assignment_1
         public Specialty specialty;
         public string name;
 
-        public Programmer()
+        public Programmer(Specialty specialty, string name)
         {
-            // there should be parameters passed no reading in the constructor
-            // parameters name, especialty
-            Console.Write("Enter name: ");
-            name = Console.ReadLine();
-            Console.Write("Enter specialty: ");
-            specialty = (Specialty)Enum.Parse(typeof(Specialty), Console.ReadLine().ToLower());
-            // Is this the right way to convert string to Enum??
-        }
-        public Programmer(Specialty specialty)
-        {
-
+            this.specialty = specialty;
+            this.name = name;
         }
         public void Print()
         {
