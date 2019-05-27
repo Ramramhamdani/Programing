@@ -17,7 +17,6 @@ namespace Assginment_1
         }
         public void PrintCompleteStock()
         {
-            // I dont need parameters in print method
             double totalPrice = 0;
             foreach (BookstoreItem item in bookStoreItems)
             {
