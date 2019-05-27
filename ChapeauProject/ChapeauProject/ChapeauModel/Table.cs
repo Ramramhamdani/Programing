@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChapeauLogic
+namespace ChapeauModel
 {
-    class MenuItem_Service
+    public class Table
     {
-
+        public int tableID;
+        public bool status;
     }
 }

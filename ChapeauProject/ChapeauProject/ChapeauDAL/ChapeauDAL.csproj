@@ -48,7 +48,11 @@
     <Compile Include="Employee_DAO.cs" />
     <Compile Include="MenuCategory_DAO.cs" />
     <Compile Include="MenuItem_DAO.cs" />
+    <Compile Include="OrderItems_DAO.cs" />
+    <Compile Include="Order_DAO.cs" />
+    <Compile Include="Payments_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table_DAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
