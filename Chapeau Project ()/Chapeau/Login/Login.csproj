@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{316A521E-66AA-4EF7-AD31-29573981E50C}</ProjectGuid>
+    <ProjectGuid>{009BF1BD-055F-48E0-8EEF-955D94851712}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Login</RootNamespace>
     <AssemblyName>Login</AssemblyName>
@@ -103,6 +103,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChapeauLogic\ChapeauLogic.csproj">
+      <Project>{87279567-dc48-45db-9964-203092673608}</Project>
+      <Name>ChapeauLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChapeauModel\ChapeauModel.csproj">
+      <Project>{cd93002d-8502-479c-aa03-313b1416171f}</Project>
+      <Name>ChapeauModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

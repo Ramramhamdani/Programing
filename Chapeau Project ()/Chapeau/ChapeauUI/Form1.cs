@@ -24,22 +24,29 @@ namespace ChapeauUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Table_Service table_Service = new Table_Service();
-            List<Table> tables = table_Service.GetTables();
+            //Table_Service table_Service = new Table_Service();
+            //List<Table> tables = table_Service.GetTables();
+            Users_Service users_Service = new Users_Service();
+            List<User> users = users_Service.GetUsers();
 
             lstTest.View = View.Details;
             lstTest.Columns.Add("employeeID");
             lstTest.Columns.Add("name");
 
-            foreach (Table table in tables)
+            foreach (User table in users)
             {
-                ListViewItem list = new ListViewItem(table.tableID.ToString());
-                list.SubItems.Add(table.status.ToString());
+                ListViewItem list = new ListViewItem(table.username.ToString());
+                list.SubItems.Add(table.passwword.ToString());
                 lstTest.Items.Add(list);
             }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
