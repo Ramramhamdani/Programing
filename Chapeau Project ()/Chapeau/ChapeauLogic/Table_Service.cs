@@ -21,7 +21,7 @@ namespace ChapeauLogic
                 List<Table> tables = tableDb.GetTables();
                 return tables;
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
 
                 throw e;

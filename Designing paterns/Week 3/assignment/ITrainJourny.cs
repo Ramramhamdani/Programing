@@ -11,6 +11,9 @@ namespace assignment
         void AddStation(Station station);
         void ChangeStation(Station station);
         string CurrentStation(Station station);
-        
+
+        void AddObserver(ITrainController observer);
+        void RemoveObserver(ITrainController observer);
+        void NotifyObserver(ITrainController observer);
     }
 }

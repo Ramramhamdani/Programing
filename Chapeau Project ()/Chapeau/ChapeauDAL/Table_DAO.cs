@@ -20,6 +20,7 @@ namespace ChapeauDAL
         private List<Table> ReadTables(DataTable dataTable)
         {
             List<Table> tables = new List<Table>();
+            dataTable = new DataTable();
             foreach (DataRow item in dataTable.Rows)
             {
                 Table table = new Table()

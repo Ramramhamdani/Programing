@@ -9,30 +9,35 @@ namespace assignment
     class TrainController : ITrainController
     {
         public Station CurrentStation { get; }
+        private TrainJourny trainJourny;
 
         public void Show()
         {
-            
+            trainJourny.CurrentStation(CurrentStation);
         }
 
         public void Next()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Previos()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void AddObserver(ITrainJourny trainJourny)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void RemoveObserver(ITrainJourny trainJourny)
         {
-            throw new NotImplementedException();
+            
+        }
+        public TrainController(TrainJourny trainJourny)
+        {
+            this.trainJourny = trainJourny;
         }
         
     }

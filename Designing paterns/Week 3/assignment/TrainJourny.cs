@@ -39,5 +39,20 @@ namespace assignment
             string stationString = $"{station.name}, {station.arrivalTrack}, {station.departureTime}, {station.arrivalTime}";
             return stationString;
         }
+
+        public void AddObserver(ITrainController observer)
+        {
+            
+        }
+
+        public void RemoveObserver(ITrainController observer)
+        {
+            
+        }
+
+        public void NotifyObserver(ITrainController observer)
+        {
+            
+        }
     }
 }
