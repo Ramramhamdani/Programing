@@ -10,5 +10,7 @@ namespace ChapeauModel
     {
         public string username;
         public string passwword;
+        public int ID;
+        public string type;
     }
 }

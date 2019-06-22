@@ -27,5 +27,19 @@ namespace ChapeauLogic
                 throw e;
             }
         }
+
+        public string GetTask(User user)
+        {
+            try
+            {
+                string type = UsersDb.GetTask(user);
+                return type;
+            }
+            catch (SqlException e)
+            {
+
+                throw e;
+            }
+        }
     }
 }

@@ -27,21 +27,42 @@ namespace Login
             User user = new User()
             {
                 username = (string)txtUsername.Text,
-                passwword = (string)txtPassword.Text
+                passwword = (string)txtPassword.Text,
             };
+            
             foreach (User item in users)
             {
                 if (item.username==user.username && item.passwword == user.passwword)
                 {
                     isUser = true;
+                    //user function
+                    user.ID = item.ID;
+                    user.type = users_Service.GetTask(user);
                     break;
                 }
             }
             if (isUser==true)
             {
-                Hide();
-                Waiter waiter = new Waiter();
-                waiter.ShowDialog();
+                
+                if (user.type == "waiter")
+                {
+                    Hide();
+                    Waiter waiter = new Waiter(user);
+                    waiter.ShowDialog();
+                }
+                else if (user.type == "chef")
+                {
+                    Hide();
+                    //chef chef = new chef();
+                    //chef.showdialog();
+                }
+                else if (user.type == "bartender")
+                {
+                    Hide();
+                    Waiter waiter = new Waiter(user);
+                    waiter.ShowDialog();
+                }
+                
             }
             else
             {

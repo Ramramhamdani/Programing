@@ -49,10 +49,10 @@
             this.pBLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pBLogin.Image = global::Login.Properties.Resources.button1;
             this.pBLogin.InitialImage = null;
-            this.pBLogin.Location = new System.Drawing.Point(2, 578);
+            this.pBLogin.Location = new System.Drawing.Point(-1, 578);
             this.pBLogin.Margin = new System.Windows.Forms.Padding(0);
             this.pBLogin.Name = "pBLogin";
-            this.pBLogin.Size = new System.Drawing.Size(308, 262);
+            this.pBLogin.Size = new System.Drawing.Size(379, 262);
             this.pBLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBLogin.TabIndex = 0;
             this.pBLogin.TabStop = false;
@@ -74,6 +74,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(44, 547);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(292, 35);
             this.txtPassword.TabIndex = 2;
             // 

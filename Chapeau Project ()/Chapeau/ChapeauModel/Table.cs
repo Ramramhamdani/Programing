@@ -9,6 +9,7 @@ namespace ChapeauModel
     public class Table
     {
         public int tableID;
-        public bool status;
+        public int status;
     }
 }
+// Changing the table [table] (the datatype from bit to int)

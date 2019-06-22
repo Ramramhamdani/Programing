@@ -31,10 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Waiter));
             this.pnlTablesPlan = new System.Windows.Forms.Panel();
             this.checkBOrdered = new System.Windows.Forms.CheckBox();
-            this.btnOrdered = new CircularButton();
             this.checkBFree = new System.Windows.Forms.CheckBox();
-            this.btnFree = new CircularButton();
             this.checkBReserved = new System.Windows.Forms.CheckBox();
+            this.checkBOccupide = new System.Windows.Forms.CheckBox();
+            this.lblLogout = new System.Windows.Forms.Label();
+            this.lblOrder = new System.Windows.Forms.Label();
+            this.lblEmployeeNr = new System.Windows.Forms.Label();
+            this.lblEmployeeNum = new System.Windows.Forms.Label();
+            this.pnlOrderdTable = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblTablesNr = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblBackToPlan = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pnlCurrentOrdersList = new System.Windows.Forms.Panel();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.lblBack = new System.Windows.Forms.Label();
+            this.lblTableNr = new System.Windows.Forms.Label();
+            this.btnOrdered = new CircularButton();
+            this.btnFree = new CircularButton();
             this.btnReserved = new CircularButton();
             this.btnTable10 = new CircularButton();
             this.btnTable9 = new CircularButton();
@@ -44,35 +62,17 @@
             this.btnTable5 = new CircularButton();
             this.btnTable4 = new CircularButton();
             this.btnTable3 = new CircularButton();
-            this.checkBOccupide = new System.Windows.Forms.CheckBox();
             this.btnOccupide = new CircularButton();
             this.btnTable2 = new CircularButton();
             this.btnTable1 = new CircularButton();
-            this.lblLogout = new System.Windows.Forms.Label();
-            this.lblOrder = new System.Windows.Forms.Label();
-            this.lblEmployeeNr = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlOrderdTable = new System.Windows.Forms.Panel();
+            this.btnPinPass = new CircularButton();
+            this.btnCash = new CircularButton();
             this.btnDeleteOrder = new CircularButton();
             this.btnOrdersNotation = new CircularButton();
             this.btnAddOrder = new CircularButton();
             this.btnTablesInvoice = new CircularButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnCurrentOrder = new CircularButton();
             this.btnOrdersList = new CircularButton();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblTablesNr = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblBackToPlan = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pnlCurrentOrdersList = new System.Windows.Forms.Panel();
-            this.btnPinPass = new CircularButton();
-            this.btnCash = new CircularButton();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.lblBack = new System.Windows.Forms.Label();
-            this.lblTableNr = new System.Windows.Forms.Label();
             this.pnlTablesPlan.SuspendLayout();
             this.pnlOrderdTable.SuspendLayout();
             this.pnlCurrentOrdersList.SuspendLayout();
@@ -102,7 +102,7 @@
             this.pnlTablesPlan.Controls.Add(this.lblLogout);
             this.pnlTablesPlan.Controls.Add(this.lblOrder);
             this.pnlTablesPlan.Controls.Add(this.lblEmployeeNr);
-            this.pnlTablesPlan.Controls.Add(this.label1);
+            this.pnlTablesPlan.Controls.Add(this.lblEmployeeNum);
             this.pnlTablesPlan.Location = new System.Drawing.Point(15, 23);
             this.pnlTablesPlan.Name = "pnlTablesPlan";
             this.pnlTablesPlan.Size = new System.Drawing.Size(338, 727);
@@ -116,6 +116,237 @@
             this.checkBOrdered.Size = new System.Drawing.Size(15, 14);
             this.checkBOrdered.TabIndex = 44;
             this.checkBOrdered.UseVisualStyleBackColor = true;
+            // 
+            // checkBFree
+            // 
+            this.checkBFree.AutoSize = true;
+            this.checkBFree.Location = new System.Drawing.Point(158, 443);
+            this.checkBFree.Name = "checkBFree";
+            this.checkBFree.Size = new System.Drawing.Size(15, 14);
+            this.checkBFree.TabIndex = 42;
+            this.checkBFree.UseVisualStyleBackColor = true;
+            // 
+            // checkBReserved
+            // 
+            this.checkBReserved.AutoSize = true;
+            this.checkBReserved.Location = new System.Drawing.Point(158, 305);
+            this.checkBReserved.Name = "checkBReserved";
+            this.checkBReserved.Size = new System.Drawing.Size(15, 14);
+            this.checkBReserved.TabIndex = 40;
+            this.checkBReserved.UseVisualStyleBackColor = true;
+            // 
+            // checkBOccupide
+            // 
+            this.checkBOccupide.AutoSize = true;
+            this.checkBOccupide.Location = new System.Drawing.Point(158, 174);
+            this.checkBOccupide.Name = "checkBOccupide";
+            this.checkBOccupide.Size = new System.Drawing.Size(15, 14);
+            this.checkBOccupide.TabIndex = 30;
+            this.checkBOccupide.UseVisualStyleBackColor = true;
+            // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogout.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.lblLogout.ForeColor = System.Drawing.Color.White;
+            this.lblLogout.Location = new System.Drawing.Point(135, 40);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(72, 25);
+            this.lblLogout.TabIndex = 26;
+            this.lblLogout.Text = "Logout";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click_1);
+            // 
+            // lblOrder
+            // 
+            this.lblOrder.AutoSize = true;
+            this.lblOrder.BackColor = System.Drawing.Color.Transparent;
+            this.lblOrder.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.lblOrder.ForeColor = System.Drawing.Color.White;
+            this.lblOrder.Location = new System.Drawing.Point(254, -2);
+            this.lblOrder.Name = "lblOrder";
+            this.lblOrder.Size = new System.Drawing.Size(79, 25);
+            this.lblOrder.TabIndex = 25;
+            this.lblOrder.Text = "Order >";
+            // 
+            // lblEmployeeNr
+            // 
+            this.lblEmployeeNr.AutoSize = true;
+            this.lblEmployeeNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeNr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeNr.ForeColor = System.Drawing.Color.White;
+            this.lblEmployeeNr.Location = new System.Drawing.Point(98, 2);
+            this.lblEmployeeNr.Name = "lblEmployeeNr";
+            this.lblEmployeeNr.Size = new System.Drawing.Size(0, 21);
+            this.lblEmployeeNr.TabIndex = 24;
+            // 
+            // lblEmployeeNum
+            // 
+            this.lblEmployeeNum.AutoSize = true;
+            this.lblEmployeeNum.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeNum.ForeColor = System.Drawing.Color.White;
+            this.lblEmployeeNum.Location = new System.Drawing.Point(-2, 2);
+            this.lblEmployeeNum.Name = "lblEmployeeNum";
+            this.lblEmployeeNum.Size = new System.Drawing.Size(100, 21);
+            this.lblEmployeeNum.TabIndex = 23;
+            this.lblEmployeeNum.Text = "Employee nr.";
+            this.lblEmployeeNum.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // pnlOrderdTable
+            // 
+            this.pnlOrderdTable.BackColor = System.Drawing.Color.Transparent;
+            this.pnlOrderdTable.Controls.Add(this.btnDeleteOrder);
+            this.pnlOrderdTable.Controls.Add(this.btnOrdersNotation);
+            this.pnlOrderdTable.Controls.Add(this.btnAddOrder);
+            this.pnlOrderdTable.Controls.Add(this.btnTablesInvoice);
+            this.pnlOrderdTable.Controls.Add(this.label3);
+            this.pnlOrderdTable.Controls.Add(this.btnCurrentOrder);
+            this.pnlOrderdTable.Controls.Add(this.btnOrdersList);
+            this.pnlOrderdTable.Controls.Add(this.lblTime);
+            this.pnlOrderdTable.Controls.Add(this.lblTablesNr);
+            this.pnlOrderdTable.Controls.Add(this.label2);
+            this.pnlOrderdTable.Controls.Add(this.lblBackToPlan);
+            this.pnlOrderdTable.Controls.Add(this.label4);
+            this.pnlOrderdTable.Location = new System.Drawing.Point(13, 17);
+            this.pnlOrderdTable.Name = "pnlOrderdTable";
+            this.pnlOrderdTable.Size = new System.Drawing.Size(336, 724);
+            this.pnlOrderdTable.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(304, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 37);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "<";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(277, 7);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(0, 21);
+            this.lblTime.TabIndex = 19;
+            // 
+            // lblTablesNr
+            // 
+            this.lblTablesNr.AutoSize = true;
+            this.lblTablesNr.BackColor = System.Drawing.Color.Transparent;
+            this.lblTablesNr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTablesNr.ForeColor = System.Drawing.Color.White;
+            this.lblTablesNr.Location = new System.Drawing.Point(79, 7);
+            this.lblTablesNr.Name = "lblTablesNr";
+            this.lblTablesNr.Size = new System.Drawing.Size(0, 21);
+            this.lblTablesNr.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(195, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 21);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Order time:";
+            // 
+            // lblBackToPlan
+            // 
+            this.lblBackToPlan.AutoSize = true;
+            this.lblBackToPlan.BackColor = System.Drawing.Color.Transparent;
+            this.lblBackToPlan.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.lblBackToPlan.ForeColor = System.Drawing.Color.White;
+            this.lblBackToPlan.Location = new System.Drawing.Point(5, 59);
+            this.lblBackToPlan.Name = "lblBackToPlan";
+            this.lblBackToPlan.Size = new System.Drawing.Size(125, 25);
+            this.lblBackToPlan.TabIndex = 16;
+            this.lblBackToPlan.Text = "< Tables plan";
+            this.lblBackToPlan.Click += new System.EventHandler(this.lblBackToPlan_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 21);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Table nr.";
+            // 
+            // pnlCurrentOrdersList
+            // 
+            this.pnlCurrentOrdersList.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCurrentOrdersList.Controls.Add(this.btnPinPass);
+            this.pnlCurrentOrdersList.Controls.Add(this.btnCash);
+            this.pnlCurrentOrdersList.Controls.Add(this.lblTotalPrice);
+            this.pnlCurrentOrdersList.Controls.Add(this.label5);
+            this.pnlCurrentOrdersList.Controls.Add(this.listView1);
+            this.pnlCurrentOrdersList.Controls.Add(this.lblBack);
+            this.pnlCurrentOrdersList.Controls.Add(this.lblTableNr);
+            this.pnlCurrentOrdersList.Location = new System.Drawing.Point(7, 11);
+            this.pnlCurrentOrdersList.Name = "pnlCurrentOrdersList";
+            this.pnlCurrentOrdersList.Size = new System.Drawing.Size(346, 739);
+            this.pnlCurrentOrdersList.TabIndex = 25;
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(185, 536);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(0, 28);
+            this.lblTotalPrice.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(19, 536);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 28);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Total Price:";
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.listView1.Location = new System.Drawing.Point(19, 143);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(309, 359);
+            this.listView1.TabIndex = 2;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.White;
+            this.lblBack.Location = new System.Drawing.Point(14, 90);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(77, 28);
+            this.lblBack.TabIndex = 1;
+            this.lblBack.Text = "< Back";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+            // 
+            // lblTableNr
+            // 
+            this.lblTableNr.AutoSize = true;
+            this.lblTableNr.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNr.Location = new System.Drawing.Point(138, 32);
+            this.lblTableNr.Name = "lblTableNr";
+            this.lblTableNr.Size = new System.Drawing.Size(0, 28);
+            this.lblTableNr.TabIndex = 0;
             // 
             // btnOrdered
             // 
@@ -132,15 +363,6 @@
             this.btnOrdered.UseVisualStyleBackColor = false;
             this.btnOrdered.Click += new System.EventHandler(this.btnOrdered_Click_1);
             // 
-            // checkBFree
-            // 
-            this.checkBFree.AutoSize = true;
-            this.checkBFree.Location = new System.Drawing.Point(158, 443);
-            this.checkBFree.Name = "checkBFree";
-            this.checkBFree.Size = new System.Drawing.Size(15, 14);
-            this.checkBFree.TabIndex = 42;
-            this.checkBFree.UseVisualStyleBackColor = true;
-            // 
             // btnFree
             // 
             this.btnFree.BackColor = System.Drawing.Color.White;
@@ -155,15 +377,6 @@
             this.btnFree.Text = "Free";
             this.btnFree.UseVisualStyleBackColor = false;
             this.btnFree.Click += new System.EventHandler(this.btnFree_Click_1);
-            // 
-            // checkBReserved
-            // 
-            this.checkBReserved.AutoSize = true;
-            this.checkBReserved.Location = new System.Drawing.Point(158, 305);
-            this.checkBReserved.Name = "checkBReserved";
-            this.checkBReserved.Size = new System.Drawing.Size(15, 14);
-            this.checkBReserved.TabIndex = 40;
-            this.checkBReserved.UseVisualStyleBackColor = true;
             // 
             // btnReserved
             // 
@@ -300,15 +513,6 @@
             this.btnTable3.UseVisualStyleBackColor = false;
             this.btnTable3.Click += new System.EventHandler(this.btnTable3_Click_1);
             // 
-            // checkBOccupide
-            // 
-            this.checkBOccupide.AutoSize = true;
-            this.checkBOccupide.Location = new System.Drawing.Point(158, 174);
-            this.checkBOccupide.Name = "checkBOccupide";
-            this.checkBOccupide.Size = new System.Drawing.Size(15, 14);
-            this.checkBOccupide.TabIndex = 30;
-            this.checkBOccupide.UseVisualStyleBackColor = true;
-            // 
             // btnOccupide
             // 
             this.btnOccupide.BackColor = System.Drawing.Color.DarkSeaGreen;
@@ -354,73 +558,34 @@
             this.btnTable1.UseVisualStyleBackColor = false;
             this.btnTable1.Click += new System.EventHandler(this.btnTable1_Click_1);
             // 
-            // lblLogout
+            // btnPinPass
             // 
-            this.lblLogout.AutoSize = true;
-            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogout.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.lblLogout.ForeColor = System.Drawing.Color.White;
-            this.lblLogout.Location = new System.Drawing.Point(135, 40);
-            this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(72, 25);
-            this.lblLogout.TabIndex = 26;
-            this.lblLogout.Text = "Logout";
-            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click_1);
+            this.btnPinPass.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnPinPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPinPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPinPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPinPass.ForeColor = System.Drawing.Color.White;
+            this.btnPinPass.Location = new System.Drawing.Point(235, 622);
+            this.btnPinPass.Name = "btnPinPass";
+            this.btnPinPass.Size = new System.Drawing.Size(70, 70);
+            this.btnPinPass.TabIndex = 23;
+            this.btnPinPass.Text = "Pin pass";
+            this.btnPinPass.UseVisualStyleBackColor = false;
             // 
-            // lblOrder
+            // btnCash
             // 
-            this.lblOrder.AutoSize = true;
-            this.lblOrder.BackColor = System.Drawing.Color.Transparent;
-            this.lblOrder.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.lblOrder.ForeColor = System.Drawing.Color.White;
-            this.lblOrder.Location = new System.Drawing.Point(254, -2);
-            this.lblOrder.Name = "lblOrder";
-            this.lblOrder.Size = new System.Drawing.Size(79, 25);
-            this.lblOrder.TabIndex = 25;
-            this.lblOrder.Text = "Order >";
-            // 
-            // lblEmployeeNr
-            // 
-            this.lblEmployeeNr.AutoSize = true;
-            this.lblEmployeeNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmployeeNr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeNr.ForeColor = System.Drawing.Color.White;
-            this.lblEmployeeNr.Location = new System.Drawing.Point(105, -1);
-            this.lblEmployeeNr.Name = "lblEmployeeNr";
-            this.lblEmployeeNr.Size = new System.Drawing.Size(0, 21);
-            this.lblEmployeeNr.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-2, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 21);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Employee nr.";
-            // 
-            // pnlOrderdTable
-            // 
-            this.pnlOrderdTable.BackColor = System.Drawing.Color.Transparent;
-            this.pnlOrderdTable.Controls.Add(this.btnDeleteOrder);
-            this.pnlOrderdTable.Controls.Add(this.btnOrdersNotation);
-            this.pnlOrderdTable.Controls.Add(this.btnAddOrder);
-            this.pnlOrderdTable.Controls.Add(this.btnTablesInvoice);
-            this.pnlOrderdTable.Controls.Add(this.label3);
-            this.pnlOrderdTable.Controls.Add(this.btnCurrentOrder);
-            this.pnlOrderdTable.Controls.Add(this.btnOrdersList);
-            this.pnlOrderdTable.Controls.Add(this.lblTime);
-            this.pnlOrderdTable.Controls.Add(this.lblTablesNr);
-            this.pnlOrderdTable.Controls.Add(this.label2);
-            this.pnlOrderdTable.Controls.Add(this.lblBackToPlan);
-            this.pnlOrderdTable.Controls.Add(this.label4);
-            this.pnlOrderdTable.Location = new System.Drawing.Point(13, 17);
-            this.pnlOrderdTable.Name = "pnlOrderdTable";
-            this.pnlOrderdTable.Size = new System.Drawing.Size(336, 724);
-            this.pnlOrderdTable.TabIndex = 24;
+            this.btnCash.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCash.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCash.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCash.ForeColor = System.Drawing.Color.White;
+            this.btnCash.Location = new System.Drawing.Point(43, 622);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(70, 70);
+            this.btnCash.TabIndex = 22;
+            this.btnCash.Text = "Cash";
+            this.btnCash.UseVisualStyleBackColor = false;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnDeleteOrder
             // 
@@ -478,18 +643,6 @@
             this.btnTablesInvoice.Text = "  Table\'s   Invoice";
             this.btnTablesInvoice.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(304, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 37);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "<";
-            // 
             // btnCurrentOrder
             // 
             this.btnCurrentOrder.BackColor = System.Drawing.Color.RoyalBlue;
@@ -519,158 +672,6 @@
             this.btnOrdersList.Text = "  Orders    List";
             this.btnOrdersList.UseVisualStyleBackColor = false;
             // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(277, 7);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(0, 21);
-            this.lblTime.TabIndex = 19;
-            // 
-            // lblTablesNr
-            // 
-            this.lblTablesNr.AutoSize = true;
-            this.lblTablesNr.BackColor = System.Drawing.Color.Transparent;
-            this.lblTablesNr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTablesNr.ForeColor = System.Drawing.Color.White;
-            this.lblTablesNr.Location = new System.Drawing.Point(79, 7);
-            this.lblTablesNr.Name = "lblTablesNr";
-            this.lblTablesNr.Size = new System.Drawing.Size(0, 21);
-            this.lblTablesNr.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(195, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 21);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Order time:";
-            // 
-            // lblBackToPlan
-            // 
-            this.lblBackToPlan.AutoSize = true;
-            this.lblBackToPlan.BackColor = System.Drawing.Color.Transparent;
-            this.lblBackToPlan.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.lblBackToPlan.ForeColor = System.Drawing.Color.White;
-            this.lblBackToPlan.Location = new System.Drawing.Point(5, 59);
-            this.lblBackToPlan.Name = "lblBackToPlan";
-            this.lblBackToPlan.Size = new System.Drawing.Size(125, 25);
-            this.lblBackToPlan.TabIndex = 16;
-            this.lblBackToPlan.Text = "< Tables plan";
-            this.lblBackToPlan.Click += new System.EventHandler(this.lblBackToPlan_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 21);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Table nr.";
-            // 
-            // pnlCurrentOrdersList
-            // 
-            this.pnlCurrentOrdersList.BackColor = System.Drawing.Color.Transparent;
-            this.pnlCurrentOrdersList.Controls.Add(this.btnPinPass);
-            this.pnlCurrentOrdersList.Controls.Add(this.btnCash);
-            this.pnlCurrentOrdersList.Controls.Add(this.lblTotalPrice);
-            this.pnlCurrentOrdersList.Controls.Add(this.label5);
-            this.pnlCurrentOrdersList.Controls.Add(this.listView1);
-            this.pnlCurrentOrdersList.Controls.Add(this.lblBack);
-            this.pnlCurrentOrdersList.Controls.Add(this.lblTableNr);
-            this.pnlCurrentOrdersList.Location = new System.Drawing.Point(7, 11);
-            this.pnlCurrentOrdersList.Name = "pnlCurrentOrdersList";
-            this.pnlCurrentOrdersList.Size = new System.Drawing.Size(346, 739);
-            this.pnlCurrentOrdersList.TabIndex = 25;
-            // 
-            // btnPinPass
-            // 
-            this.btnPinPass.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnPinPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPinPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPinPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPinPass.ForeColor = System.Drawing.Color.White;
-            this.btnPinPass.Location = new System.Drawing.Point(235, 622);
-            this.btnPinPass.Name = "btnPinPass";
-            this.btnPinPass.Size = new System.Drawing.Size(70, 70);
-            this.btnPinPass.TabIndex = 23;
-            this.btnPinPass.Text = "Pin pass";
-            this.btnPinPass.UseVisualStyleBackColor = false;
-            // 
-            // btnCash
-            // 
-            this.btnCash.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCash.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCash.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCash.ForeColor = System.Drawing.Color.White;
-            this.btnCash.Location = new System.Drawing.Point(43, 622);
-            this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(70, 70);
-            this.btnCash.TabIndex = 22;
-            this.btnCash.Text = "Cash";
-            this.btnCash.UseVisualStyleBackColor = false;
-            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
-            // 
-            // lblTotalPrice
-            // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(185, 536);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(0, 28);
-            this.lblTotalPrice.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 536);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 28);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Total Price:";
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.listView1.Location = new System.Drawing.Point(19, 143);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(309, 359);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // lblBack
-            // 
-            this.lblBack.AutoSize = true;
-            this.lblBack.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.ForeColor = System.Drawing.Color.White;
-            this.lblBack.Location = new System.Drawing.Point(14, 90);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(77, 28);
-            this.lblBack.TabIndex = 1;
-            this.lblBack.Text = "< Back";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
-            // 
-            // lblTableNr
-            // 
-            this.lblTableNr.AutoSize = true;
-            this.lblTableNr.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableNr.Location = new System.Drawing.Point(138, 32);
-            this.lblTableNr.Name = "lblTableNr";
-            this.lblTableNr.Size = new System.Drawing.Size(0, 28);
-            this.lblTableNr.TabIndex = 0;
-            // 
             // Waiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,10 +679,10 @@
             this.BackgroundImage = global::Login.Properties.Resources.background3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(359, 773);
+            this.Controls.Add(this.pnlTablesPlan);
             this.Controls.Add(this.pnlCurrentOrdersList);
             this.Controls.Add(this.pnlOrderdTable);
-            this.Controls.Add(this.pnlTablesPlan);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Waiter";
             this.Text = "Waiter";
@@ -718,7 +719,7 @@
         private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Label lblOrder;
         private System.Windows.Forms.Label lblEmployeeNr;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEmployeeNum;
         private System.Windows.Forms.Panel pnlOrderdTable;
         private CircularButton btnDeleteOrder;
         private CircularButton btnOrdersNotation;

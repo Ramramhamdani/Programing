@@ -14,7 +14,7 @@ namespace ChapeauDAL
     {
         public List<User> GetUsers()
         {
-            string query = "SELECT UserName,[Password] FROM Users";
+            string query = "SELECT UserName,[Password],EmployeeID FROM Users";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -25,12 +25,31 @@ namespace ChapeauDAL
             {
                 User user = new User()
                 {
-                    username = (string)item["UserName"],
-                    passwword = (string)item["Password"]
+                    username = (string)item["Username"],
+                    passwword = (string)item["Password"],
+                    ID = (int)item["EmployeeID"]
                 };
                 users.Add(user);
             }
             return users;
+        }
+        public string GetTask(User user)
+        {
+            string query = $"SELECT E.task as [type] FROM Users as u " +
+                $" inner join Employee as E ON u.EmployeeID = E.EmployeeID WHERE u.EmployeeID = {user.ID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTask(ExecuteSelectQuery(query, sqlParameters));
+        }
+        private string ReadTask(DataTable dataTable)
+        {
+            string type = "";
+            foreach (DataRow item in dataTable.Rows)
+            {
+
+                type = (string)item["type"];
+                
+            }
+            return type;
         }
     }
 }
