@@ -14,5 +14,6 @@ namespace ChapeauModel
         public int amount;
         public DateTime dateTime;
         public string comments;
+        public int status;
     }
 }

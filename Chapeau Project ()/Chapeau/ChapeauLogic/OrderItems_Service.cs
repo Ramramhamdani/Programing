@@ -26,5 +26,44 @@ namespace ChapeauLogic
                 throw e;
             }
         }
+        public List<OrderItems> GetOrderItems(int lowID, int highID, int tableNumber)
+        {
+            try
+            {
+                List<OrderItems> orderItems = orderItemsDb.GetOrderItems(lowID, highID, tableNumber);
+                return orderItems;
+            }
+            catch (SqlException e)
+            {
+
+                throw e;
+            }
+        }
+        public List<OrderItems> GetOrderItems(int itemID)
+        {
+            try
+            {
+                List<OrderItems> orderItems = orderItemsDb.GetOrderItems();
+                return orderItems;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        public void ChangeStatus(int status, int orderID, int lowID, int highID)
+        {
+            try
+            {
+                orderItemsDb.ChangeStatus(status, orderID, lowID, highID);
+
+            }
+            catch (SqlException e)
+            {
+
+                throw e;
+            }
+        }
     }
 }

@@ -12,5 +12,6 @@ namespace ChapeauModel
         public int tableID;
         public int employeeID;
         public string feedback;
+        public int status;
     }
 }

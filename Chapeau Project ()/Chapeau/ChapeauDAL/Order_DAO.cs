@@ -17,6 +17,9 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
+
+        
+
         private List<Order> ReadTables(DataTable dataTable)
         {
             List<Order> orders = new List<Order>();
@@ -27,7 +30,8 @@ namespace ChapeauDAL
                     orderID = (int)item["OrderID"],
                     employeeID = (int)item["EmployeeID"],
                     tableID = (int)item["TableID"],
-                    feedback = (string)item["feedback"]
+                    feedback = (string)item["feedback"],
+                    status = (int)item["status"]
                 };
                 orders.Add(order);
             }

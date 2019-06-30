@@ -18,7 +18,7 @@ namespace Assignment_1
             InitializeComponent();
 
             this.trainJourny = trainJourny;
-            //this.trainJourny.AddObserver(this);
+            this.trainJourny.AddObserver(this);
         }
 
         public void Update(Station currentStation)

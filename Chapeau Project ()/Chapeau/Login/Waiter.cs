@@ -1,217 +1,186 @@
-﻿using ChapeauLogic;
-using ChapeauModel;
-using Microsoft.CSharp;
-using System;
-using System.CodeDom.Compiler;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChapeauLogic;
+using ChapeauModel;
+using System.Diagnostics;
+using System.Reflection;
+using System.CodeDom.Compiler;
+using Microsoft.CSharp;
 
 namespace Login
 {
     public partial class Waiter : Form
     {
-
         public Waiter(User user)
         {
             // 0 = free, 1 = reserved, 2 = occupide, 3 = orderd
 
             InitializeComponent();
-            // hide pnls
-            pnlOrderdTable.Hide();
-            pnlCurrentOrdersList.Hide();
 
+            //Hide and show pnls
+            ShowHidePnl(pnlTablesPlan);
 
-            Table_Service table_Service = new Table_Service();
-            List<Table> tables = table_Service.GetTables();
-
-
-            foreach (Table table in tables)
-            {
-                if (table.tableID == 1)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable1.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable1.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable1.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable1.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 2)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable2.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable2.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable2.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable2.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 3)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable3.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable3.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable3.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable3.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 4)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable4.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable4.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable4.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable4.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 5)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable5.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable5.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable5.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable5.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 6)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable6.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable6.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable6.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable6.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 7)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable7.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable7.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable7.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable7.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 8)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable8.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable8.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable8.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable8.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 9)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable9.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable9.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable9.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable9.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-                else if (table.tableID == 10)
-                {
-                    switch (table.status)
-                    {
-                        case 2:
-                            btnTable10.BackColor = Color.DarkSeaGreen;
-                            break;
-                        case 0:
-                            btnTable10.BackColor = Color.White;
-                            break;
-                        case 1:
-                            btnTable10.BackColor = Color.IndianRed;
-                            break;
-                        case 3:
-                            btnTable10.BackColor = Color.Violet;
-                            break;
-                    }
-                }
-            }
+            Start();
+            
             // Employee number
             lblEmployeeNr.Text = user.ID.ToString();
         }
+        void Start()
+        {
+            Table_Service table_Service = new Table_Service();
+            List<Table> tables = table_Service.GetTables();
+            List<Button> buttons = TablesButtons();
+
+            int buttonNumber = 1;
+
+            foreach (Table table in tables)
+            {
+                if (table.tableID == buttonNumber)
+                {
+                    ChangeColor(table, buttons[buttonNumber - 1]);
+                }
+                buttonNumber++;
+            }
+        }
+
+        void TableColor(Table table, Button button)
+        {            
+            //Check / unckeck / Colores
+            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
+            if (checkBOccupide.Checked)
+            {
+                button.BackColor = Color.DarkSeaGreen;
+                table.status = 2;
+                //Send to database
+                changeStatus(table);
+            }
+            else if (checkBReserved.Checked)
+            {
+                button.BackColor = Color.IndianRed;
+                table.status = 1;
+                //Send to database
+                changeStatus(table);
+            }
+            else if (checkBFree.Checked)
+            {
+                button.BackColor = Color.White;
+                table.status = 0;
+                //Send to database
+                changeStatus(table);
+            }
+            else if (checkBOrdered.Checked)
+            {
+                button.BackColor = Color.Violet;
+                table.status = 3;
+                //Send to database
+                changeStatus(table);
+            }                
+            else
+            {
+                //Opens tables order
+                TablesOrder(button);
+            }            
+        }
+        void TablesOrder(Button button)
+        {
+            if (button.BackColor == Color.Violet)
+            {
+                ShowHidePnl(pnlOrderdTable);              
+            }
+            else if (button.BackColor == Color.DarkSeaGreen)
+            {
+                ShowHidePnl(pnlOrderMenu);               
+            }
+        }
+        void ShowHidePnl(Panel pnlName)
+        {
+            //Hide pnl
+            pnlCurrentOrdersList.Hide();
+            pnlCurrentOrderSubmition.Hide();
+            pnlDinnerMenu.Hide();
+            pnlLunchMenu.Hide();
+            pnlDrinksMenu.Hide();
+            pnlOrderdTable.Hide();
+            pnlOrderMenu.Hide();
+            pnlTablesPlan.Hide();
+
+            //Show pnl
+            pnlName.Show();
+
+        }
+        void ListViewMenus(ListView listview, string Header, List<ChapeauModel.MenuItem> menuList)
+        {
+            //Clear the listview before filling it again
+            listview.Clear();
+
+            //List view Allign
+            listview.Columns.Add(Header);
+            listview.Columns[0].Width = 800;
+            listview.Columns.Add("Price");
+            listview.Columns[1].Width = 0;
+            listview.Columns.Add("Stock");
+            listview.Columns[2].Width = 0;
+            listview.Columns.Add("CategoruID");
+            listview.Columns[3].Width = 0;
+            listview.Columns.Add("MenuItemID");
+            listview.Columns[4].Width = 0;
+
+            foreach (var Item in menuList)
+            {
+                ListViewItem li = new ListViewItem(Item.name);
+                li.SubItems.Add(Item.name);
+                li.SubItems.Add(Item.price.ToString());
+                li.SubItems.Add(Item.stock.ToString());
+                li.SubItems.Add(Item.CategoryID.ToString());
+                li.SubItems.Add(Item.menuItemID.ToString());
+                listview.Items.Add(li);
+            }
+        }
+        
+        ChapeauModel.MenuItem ListViewSelectedMenuItem(ListView listview)
+        {
+            string listName = listview.SelectedItems[0].SubItems[1].Text;
+            decimal listPrice = decimal.Parse(listview.SelectedItems[0].SubItems[2].Text);
+            int listStock = int.Parse(listview.SelectedItems[0].SubItems[3].Text);
+            int listCategory = int.Parse(listview.SelectedItems[0].SubItems[4].Text);
+            int listID = int.Parse(listview.SelectedItems[0].SubItems[5].Text);
+            
+            
+            ChapeauModel.MenuItem item = new ChapeauModel.MenuItem(listName, listPrice, listStock, listCategory, listID);
+            return item;
+        } 
+        void ResetCheckBoxes()
+        {
+            //reset Check boxes
+            checkBOccupide.Checked = false;
+            checkBReserved.Checked = false;
+            checkBFree.Checked = false;
+            checkBOrdered.Checked = false;
+        }        
+        public List<Button> TablesButtons()
+        {
+            List<Button> buttons = new List<Button>();
+            buttons.Add(btnTable1);
+            buttons.Add(btnTable2);
+            buttons.Add(btnTable3);
+            buttons.Add(btnTable4);
+            buttons.Add(btnTable5);
+            buttons.Add(btnTable6);
+            buttons.Add(btnTable7);
+            buttons.Add(btnTable8);
+            buttons.Add(btnTable9);
+            buttons.Add(btnTable10);
+            return buttons;
+        }
+        
+
         private void ChangeColor(Table table, Button button)
         {
             switch (table.status)
@@ -229,32 +198,7 @@ namespace Login
                     button.BackColor = Color.Violet;
                     break;
             }
-
         }
-        private void ChangeColor(int tableNumber)
-        {
-            // execute command from string source
-            string source = "if (table.tableID == tableNumber)" +
-                " {" +
-                "   switch (table.status)" +
-                "   {" +
-                "       case true:" +
-                $"           btnTable{tableNumber}.BackColor = Color.IndianRed;" +
-                "           break;" +
-                "       case false:" +
-                $"           btnTable{tableNumber}.BackColor = Color.White;" +
-                "           break;" +
-                "   }" +
-                " }";
-            CSharpCodeProvider provider = new CSharpCodeProvider();
-            CompilerParameters parameters = new CompilerParameters
-            {
-                GenerateInMemory = true,
-                GenerateExecutable = false
-            };
-            CompilerResults compilerResults = provider.CompileAssemblyFromSource(parameters, source);
-        }
-
         private void lblLogout_Click_1(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
@@ -267,575 +211,73 @@ namespace Login
         {
             Table_Service table_Service = new Table_Service();
             table_Service.UpdateStatus(table);
-
+            
         }
-        private void btnTable1_Click_1(object sender, EventArgs e)
+        private void btnTables_click(object sender, EventArgs e)
         {
             Table table = new Table();
-            table.tableID = 1;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable1.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable1.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable1.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable1.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable1.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable1.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
+            List<Button> buttons = TablesButtons();
+            var btn = (Button)sender;
 
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
+            int f = 0;
+            for (int i = 1; i < 11; i++)
+            {
+                if (btn.Name == buttons[i-1].Name)
+                {
+                    table.tableID = i;
+                    continue;
+                }                               
+            }
+            //Open tables Order
+            TableColor(table, btn);
+            ResetCheckBoxes();
         }
-
-        private void btnTable2_Click_1(object sender, EventArgs e)
+        void ShowHideCheckBox(CheckBox checkBox)
         {
-            Table table = new Table();
-            table.tableID = 2;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
+            if (checkBox.Checked == true)
             {
-                btnTable2.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable2.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable2.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable2.BackColor = Color.Violet;
-                table.status = 3;
+                checkBox.Checked = false;
             }
             else
             {
-                if (btnTable2.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable2.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnTable3_Click_1(object sender, EventArgs e)
-        {
-            Table table = new Table();
-            table.tableID = 3;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable3.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable3.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable3.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable3.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable3.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable3.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnTable4_Click_1(object sender, EventArgs e)
-        {
-            Table table = new Table();
-            table.tableID = 4;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable4.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable4.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable4.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable4.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable4.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable4.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnTable5_Click_1(object sender, EventArgs e)
-        {
-            Table table = new Table();
-            table.tableID = 5;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable5.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable5.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable5.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable5.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable5.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable5.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnTable6_Click_1(object sender, EventArgs e)
-        {
-            Table table = new Table();
-            table.tableID = 6;
-
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable6.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable6.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable6.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable6.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable6.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable6.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnTable7_Click_1(object sender, EventArgs e)
-        {
-            Table table = new Table();
-            table.tableID = 7;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable7.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable7.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable7.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable7.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable7.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable7.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnTable8_Click_1(object sender, EventArgs e)
-        {
-            Table table = new Table();
-            table.tableID = 8;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable8.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable8.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable8.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable8.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable8.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable8.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnTable9_Click(object sender, EventArgs e)
-        {
-            Table table = new Table();
-            table.tableID = 9;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable9.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable9.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable9.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable9.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable9.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable9.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnTable10_Click_1(object sender, EventArgs e)
-        {
-            Table table = new Table();
-            table.tableID = 10;
-            //Check / unckeck / Colores
-            // 0 = free.White , 1 = reserved.Red, 2 = occupide.Green, 3 = orderd.Violet
-            if (checkBOccupide.Checked)
-            {
-                btnTable10.BackColor = Color.DarkSeaGreen;
-                table.status = 2;
-            }
-            else if (checkBReserved.Checked)
-            {
-                btnTable10.BackColor = Color.IndianRed;
-                table.status = 1;
-            }
-            else if (checkBFree.Checked)
-            {
-                btnTable10.BackColor = Color.White;
-                table.status = 0;
-            }
-            else if (checkBOrdered.Checked)
-            {
-                btnTable10.BackColor = Color.Violet;
-                table.status = 3;
-            }
-            else
-            {
-                if (btnTable10.BackColor == Color.Violet)
-                {
-                    pnlTablesPlan.Hide();
-                    pnlOrderdTable.Show();
-                }
-                else if (btnTable10.BackColor == Color.DarkSeaGreen)
-                {
-                    pnlTablesPlan.Hide();
-                }
-            }
-            /*------------------------------*/
-
-            //reset Check boxes
-            checkBOccupide.Checked = false;
-            checkBReserved.Checked = false;
-            checkBFree.Checked = false;
-            checkBOrdered.Checked = false;
-            //send to the database
-            changeStatus(table);
-        }
-
-        private void btnOccupide_Click_1(object sender, EventArgs e)
-        {
-            // check / uncheck / reset
-            if (checkBOccupide.Checked == true)
-            {
-                checkBOccupide.Checked = false;
-            }
-            else
-            {
-                checkBOccupide.Checked = true;
-                checkBReserved.Checked = false;
+                //Checking all boxes off
                 checkBFree.Checked = false;
-                checkBOrdered.Checked = false;
-            }
-            /*------------------------------*/
-        }
-
-        private void btnReserved_Click_1(object sender, EventArgs e)
-        {
-            // check / uncheck / reset
-            if (checkBReserved.Checked == true)
-            {
-                checkBReserved.Checked = false;
-            }
-            else
-            {
-                checkBReserved.Checked = true;
                 checkBOccupide.Checked = false;
-                checkBFree.Checked = false;
                 checkBOrdered.Checked = false;
-            }
-            /*------------------------------*/
-        }
-
-        private void btnFree_Click_1(object sender, EventArgs e)
-        {
-            // check / uncheck / reset
-            if (checkBFree.Checked == true)
-            {
-                checkBFree.Checked = false;
-            }
-            else
-            {
-                checkBFree.Checked = true;
-                checkBOccupide.Checked = false;
                 checkBReserved.Checked = false;
-                checkBOrdered.Checked = false;
-            }
-            /*------------------------------*/
-        }
 
-        private void btnOrdered_Click_1(object sender, EventArgs e)
+                //checking on the needed box
+                checkBox.Checked = true;
+            }
+        }
+        void btnTableStatus(object sender, EventArgs e)
         {
-            // check / uncheck / reset
-            if (checkBOrdered.Checked == true)
+            var btn = (Button)sender;
+            CheckBox checkBox = new CheckBox();
+            
+            switch (btn.Name)
             {
-                checkBOrdered.Checked = false;
+                case "btnOccupide":
+                    checkBox=checkBOccupide;
+                    break;
+                case "btnReserved":
+                    checkBox = checkBReserved;
+                    break;
+                case "btnFree":
+                    checkBox = checkBFree;
+                    break;
+                case "btnOrdered":
+                    checkBox = checkBOrdered;
+                    break;
+                default:
+                    break;
             }
-            else
-            {
-                checkBOrdered.Checked = true;
-                checkBOccupide.Checked = false;
-                checkBReserved.Checked = false;
-                checkBFree.Checked = false;
-            }
-            /*------------------------------*/
-        }
-
+            //
+            ShowHideCheckBox(checkBox);
+        }       
         private void lblBackToPlan_Click(object sender, EventArgs e)
         {
-            //Hiding panels
-            pnlOrderdTable.Hide();
-            pnlTablesPlan.Show();
-
-
-
-
+            ShowHidePnl(pnlTablesPlan);
         }
 
         private void btnCash_Click(object sender, EventArgs e)
@@ -845,21 +287,209 @@ namespace Login
 
         private void btnCurrentOrder_Click(object sender, EventArgs e)
         {
-            pnlOrderdTable.Hide();
-            pnlTablesPlan.Hide();
-            pnlCurrentOrdersList.Show();
+            //Hide show pnl
+            ShowHidePnl(pnlCurrentOrdersList);
+            //Listview
+
         }
 
         private void lblBack_Click(object sender, EventArgs e)
         {
-            pnlOrderdTable.Show();
-            pnlTablesPlan.Hide();
-            pnlCurrentOrdersList.Hide();
+            //Hide show pnl
+            ShowHidePnl(pnlOrderdTable);
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            //Hide show pnl
+            ShowHidePnl(pnlOrderMenu);
+
+
+        }
+        
+        private void btnDeleteOrder_Click(object sender, EventArgs e)
+        {
+            //Hide show pnl
+            ShowHidePnl(pnlOrderdTable);
+        }
+
+        private void lblBackToMenusPage_Click(object sender, EventArgs e)
+        {
+            //Hide show pnl
+            ShowHidePnl(pnlOrderMenu);
+        }
+
+        private void lblBackToMenuOrder_Click(object sender, EventArgs e)
+        {
+            //Hide show pnl
+            ShowHidePnl(pnlOrderMenu);
+        }
+
+        private void lblBackToMenusPage1_Click(object sender, EventArgs e)
+        {
+            //Hide show pnl
+            ShowHidePnl(pnlOrderMenu);
+        }
+
+        private void lblBackToOrderMenu_Click(object sender, EventArgs e)
+        {
+            //Hide show pnl
+            ShowHidePnl(pnlTablesPlan);
+        }
+        void btnMenuPanelNavigator(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            Panel panel = new Panel();
+            
+            switch (btn.Name)
+            {
+                case "btnLunchMenu":
+                    panel = pnlLunchMenu;
+                    break;
+                case "btnDinnerMenu":
+                    panel = pnlDinnerMenu;
+                    break;
+                case "btnDrinks":
+                    panel = pnlDrinksMenu;
+                    break;                
+                default:
+                    break;
+            }
+            ShowHidePnl(panel);
+        }       
+        private void btnCurrentOrder1_Click(object sender, EventArgs e)
+        {
+            //Hide show pnl
+            ShowHidePnl(pnlCurrentOrderSubmition);
+
+            //Current menu listview
+            MenuItem_Service MenuItemService = new MenuItem_Service();
+            List<ChapeauModel.MenuItem> MenuOrderList = MenuItemService.GetLunchItems();
+
+            // List view method
+            ListViewMenus(listViewCurrentOrderSubmition, "Current Order", MenuOrderList);
+        }
+        void AddItemBtn(object sender, EventArgs e)
+        {
+            ChapeauModel.MenuItem item = new ChapeauModel.MenuItem();
+
+            item = ListViewSelectedMenuItem(listViewDinnerMenu);
+
+            OrderItems_Service orderItems = new OrderItems_Service();
+            List<OrderItems> orderItemsList = orderItems.GetOrderItems(item.menuItemID);
+
+            
+
+        }
+        private void btnAddDrinks_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listViewDrinksMenu_SelectedIndexChanged(object sender, EventArgs e)
+        { 
+        }
+
+        private void lblBackToMenus_Click(object sender, EventArgs e)
+        {
+            //Hide show panels
+            ShowHidePnl(pnlOrderMenu);
+        }
+        void MenuPanelIdicator(int categoryID, ListView menuListview, Panel menuPanel, string menuName)
+        {
+            if (categoryID == 4 || categoryID == 5 || categoryID == 6)
+            {
+                menuListview = listViewDinnerMenu;
+                menuPanel = pnlDinnerMenu;
+            }
+            else if (categoryID == 1 || categoryID == 2 || categoryID == 3)
+            {
+                menuListview = listViewLunchMenu;
+                menuPanel = pnlLunchMenu;
+            }
+            else
+            {
+                menuListview = listViewDrinksMenu;
+                menuPanel = pnlDrinksMenu;
+            }
+            //Hide show pnl
+            ShowHidePnl(menuPanel);
+
+            //menu listview
+            MenuItem_Service menuItemService = new MenuItem_Service();
+            List<ChapeauModel.MenuItem> MenuList = menuItemService.GetMenuItems(categoryID);
+
+            //List view method
+            ListViewMenus(menuListview, menuName, MenuList);
+        }
+        private void btnMenusIndicator(object sender, EventArgs e)
+        {           
+            //ID and name are used to indicates and show the btn type 
+            int categoryID = 0;
+            string menuName = "";
+
+            //ListView, panel  setter
+            ListView menuListview = new ListView();
+            Panel menuPanel = new Panel();
+
+            var btn = (Button)sender;
+            switch (btn.Name)
+            {
+                case "btnDinnerStarters":
+                    categoryID = 4;
+                    menuName = "Starters";                    
+                    break;
+                case "btnDinnerMains":
+                    categoryID = 5;
+                    menuName = "Dinner Mains";                   
+                    break;                
+                case "btnDinnerDesserts":
+                    categoryID = 6;
+                    menuName = "Desserts";                    
+                    break;
+                case "btnLunchBites":
+                    categoryID = 3;
+                    menuName = "Bites";
+                    break;
+                case "btnLunchMain":
+                    categoryID = 1;
+                    menuName = "Lunch Main";
+                    break;
+                case "btnLunchSpecials":
+                    categoryID = 2;
+                    menuName = "Specials";
+                    break;
+                case "btnDrinksBeers":
+                    categoryID = 8;
+                    menuName = "Beers";                   
+                    break;
+                case "btnDrinksHotDrinks":
+                    categoryID = 10;
+                    menuName = "Hot Drinks";                    
+                    break;
+                case "btnDrinksSoftDrinks":
+                    categoryID = 7;
+                    menuName = "Soft Drinks";                   
+                    break;
+                case "btnDrinksWines":
+                    categoryID = 9;
+                    menuName = "Wines";                    
+                    break;
+                default:
+                    break;
+            }
+            //Panel and listview setter
+            MenuPanelIdicator(categoryID, menuListview, menuPanel, menuName);                        
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Start();
         }
     }
 }

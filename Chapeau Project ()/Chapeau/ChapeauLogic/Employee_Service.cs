@@ -22,8 +22,7 @@ namespace ChapeauLogic
                 return employees;
             }
             catch (Exception e)
-            {
-
+            {                
                 throw e;
             }
         }

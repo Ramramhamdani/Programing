@@ -59,8 +59,8 @@ namespace Login
                 else if (user.type == "bartender")
                 {
                     Hide();
-                    Waiter waiter = new Waiter(user);
-                    waiter.ShowDialog();
+                    Bartender bartender = new Bartender(user);
+                    bartender.ShowDialog();
                 }
                 
             }
@@ -72,7 +72,7 @@ namespace Login
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
     }
 }
