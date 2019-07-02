@@ -69,6 +69,17 @@ namespace ChapeauDAL
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        
+        public List<MenuItem> GetDoneItems(int lowID, int highID, int tableNumber)
+        {
+            // Status = 0 = orderd || status = 1 = served
+            string query = $"SELECT OrderItems.*, M.* FROM OrderItems " +
+                $"INNER JOIN [Order] AS O ON orderItems.OrderID = O.OrderID  " +
+                $"INNER JOIN [MenuItem] AS M ON OrderItems.MenuItemID = M.MenuItemID " +
+                $"WHERE ((M.CategoryID BETWEEN {lowID} AND {highID}) AND O.TableID = {tableNumber}) AND OrderItems.[status] = 2";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+
     }
 }

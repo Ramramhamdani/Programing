@@ -287,10 +287,42 @@ namespace Login
 
         private void btnCurrentOrder_Click(object sender, EventArgs e)
         {
+            int tablenr = int.Parse(lblTablesNr.Text.ToString());
             //Hide show pnl
             ShowHidePnl(pnlCurrentOrdersList);
-            //Listview
+            ChapeauLogic.MenuItem_Service menuItem_Service = new MenuItem_Service();
+            List<ChapeauModel.MenuItem> menuItems = menuItem_Service.GetDoneItems(1, 10, tablenr);
 
+            int vat = 0;
+            MenuICategory_Service menuICategory_Service = new MenuICategory_Service();
+            foreach (ChapeauModel.MenuItem item in menuItems)
+            {
+                List<MenuCategory> menuCategories = menuICategory_Service.GetVAT(item.CategoryID);
+                vat = vat + (int)menuCategories[0].VAT;
+            }
+
+            decimal price = 0;
+            foreach (ChapeauModel.MenuItem item in menuItems)
+            {
+                price = price + item.price;
+            }
+            //Clear the listview before filling it again
+            listViewCurrentOrder.Clear();
+
+            //List view Allign
+            listViewCurrentOrder.Columns.Add("Order");
+            listViewCurrentOrder.Columns[0].Width = 200;
+            listViewCurrentOrder.Columns.Add("Price");
+            listViewCurrentOrder.Columns[1].Width = 200;
+
+
+            foreach (var Item in menuItems)
+            {
+                ListViewItem li = new ListViewItem(Item.name);
+                li.SubItems.Add(Item.name);
+                li.SubItems.Add(Item.price.ToString());
+                listViewCurrentOrder.Items.Add(li);
+            }
         }
 
         private void lblBack_Click(object sender, EventArgs e)

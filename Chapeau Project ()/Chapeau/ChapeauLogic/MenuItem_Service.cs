@@ -26,7 +26,19 @@ namespace ChapeauLogic
                 throw e;
             }
         }
+        public List<MenuItem> GetDoneItems(int lowID, int highID, int tableNumber)
+        {
+            try
+            {
+                List<MenuItem> menuItems = MenuItemDb.GetDoneItems(lowID, highID, tableNumber);
+                return menuItems;
+            }
+            catch (SqlException e)
+            {
 
+                throw e;
+            }
+        }
         public List<MenuItem> GetItems(int lowID, int highID, int tableNumber)
         {
             try

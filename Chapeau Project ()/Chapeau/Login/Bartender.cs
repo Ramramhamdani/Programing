@@ -142,7 +142,7 @@ namespace Login
             if (button.BackColor == Color.SeaGreen || button.BackColor == Color.Violet)
             {
                 OrderItems_Service orderItems_Service = new OrderItems_Service();
-                List<OrderItems> orderItems = orderItems_Service.GetOrderItems(7,10,tableNumber);
+                List<OrderItems> orderItems = orderItems_Service.GetOrderItems(28,48,tableNumber);
                 lblOrderID.Text = orderItems[0].OrderID.ToString();
 
                 ShowPanel(pnlOrdered);
@@ -215,6 +215,14 @@ namespace Login
         private void timer1_Tick(object sender, EventArgs e)
         {
             Start();
+        }
+
+        private void lblLogout_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
         }
     }
 }

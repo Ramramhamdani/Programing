@@ -53,8 +53,8 @@ namespace Login
                 else if (user.type == "chef")
                 {
                     Hide();
-                    //chef chef = new chef();
-                    //chef.showdialog();
+                    Chef chef = new Chef(user);
+                    chef.ShowDialog();
                 }
                 else if (user.type == "bartender")
                 {

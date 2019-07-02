@@ -32,5 +32,12 @@ namespace ChapeauDAL
             }
             return menuCategories;
         }
+        public List<MenuCategory> GetVATByID(int ID)
+        {
+            string query = $"SELECT * FROM MenuCategory WHERE MenuCategoryID = {ID}";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        
     }
 }
