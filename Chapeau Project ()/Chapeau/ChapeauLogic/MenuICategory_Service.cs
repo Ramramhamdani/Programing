@@ -26,11 +26,11 @@ namespace ChapeauLogic
                 throw e;
             }
         }
-        public List<MenuCategory> GetVAT(int ID)
+        public List<MenuCategory> GetVAT(int tableNr)
         {
             try
             {
-                List<MenuCategory> menuCategories = MenuCategoryDb.GetVATByID(ID);
+                List<MenuCategory> menuCategories = MenuCategoryDb.GetVAT(tableNr);
                 return menuCategories;
             }
             catch (SqlException e)

@@ -84,5 +84,22 @@ namespace ChapeauDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
+        public List<OrderItems> GetDoneItems(int tableNr)
+        {
+            string query = $"SELECT OrderItems.*, M.[name], C.MenuCategoryID,(M.price * C.VAT / 100) as [VAT] " +
+                $"FROM OrderItems " +
+                $"INNER JOIN[Order] AS O ON orderItems.OrderID = O.OrderID " +
+                $"INNER JOIN[MenuItem] AS M ON OrderItems.MenuItemID = M.MenuItemID " +
+                $"INNER JOIN MenuCategory AS C ON M.CategoryID = C.MenuCategoryID " +
+                $"WHERE((M.CategoryID BETWEEN 1 AND 48) AND O.TableID = {tableNr}) AND OrderItems.[status] = 2";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public void AddComment(string comment, int orderID)
+        {
+            string query = $"UPDATE OrderItems SET comments = '{comment}' WHERE OrderID = 3";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }

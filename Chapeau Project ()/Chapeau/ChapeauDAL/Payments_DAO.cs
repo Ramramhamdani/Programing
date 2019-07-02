@@ -35,5 +35,12 @@ namespace ChapeauDAL
             }
             return payments;
         }
+
+        public void AddPayment(Payments payment)
+        {
+            string query = $"INSERT INTO Payments VALUES({payment.orderID},{payment.orderPrice},{payment.tip},{payment.PaidAmount},'{payment.PaymentType}')";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }

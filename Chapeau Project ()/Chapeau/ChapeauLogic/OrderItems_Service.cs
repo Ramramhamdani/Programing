@@ -65,5 +65,30 @@ namespace ChapeauLogic
                 throw e;
             }
         }
+        public List<OrderItems> GetDoneItems(int tableNr)
+        {
+            try
+            {
+                List<OrderItems> orderItems = orderItemsDb.GetDoneItems(tableNr);
+                return orderItems;
+            }
+            catch (SqlException e)
+            {
+
+                throw e;
+            }
+        }
+        public void AddComment(string comment, int orderID)
+        {
+            try
+            {
+                orderItemsDb.AddComment(comment, orderID);
+            }
+            catch (SqlException e)
+            {
+
+                throw e;
+            }
+        }
     }
 }

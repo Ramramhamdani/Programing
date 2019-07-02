@@ -13,5 +13,6 @@ namespace ChapeauModel
         public decimal tip;
         public decimal paidAmount;
         public string PaymentType;
+        public decimal PaidAmount { get { return orderPrice + tip; } }
     }
 }

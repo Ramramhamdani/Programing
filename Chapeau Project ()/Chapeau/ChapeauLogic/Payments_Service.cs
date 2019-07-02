@@ -26,5 +26,17 @@ namespace ChapeauLogic
                 throw e;
             }
         }
+        public void AddPayment(Payments payment)
+        {
+            try
+            {
+                paymentsDb.AddPayment(payment);
+            }
+            catch (SqlException e)
+            {
+
+                throw e;
+            }
+        }
     }
 }

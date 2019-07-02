@@ -32,9 +32,14 @@ namespace ChapeauDAL
             }
             return menuCategories;
         }
-        public List<MenuCategory> GetVATByID(int ID)
+        public List<MenuCategory> GetVAT(int tableNr)
         {
-            string query = $"SELECT * FROM MenuCategory WHERE MenuCategoryID = {ID}";
+            string query = $"SELECT OrderItems.*, M.[name], C.MenuCategoryID,(M.price*C.VAT/100) as [VAT] " +
+                $"FROM OrderItems " +
+                $"INNER JOIN[Order] AS O ON orderItems.OrderID = O.OrderID " +
+                $"INNER JOIN[MenuItem] AS M ON OrderItems.MenuItemID = M.MenuItemID " +
+                $"INNER JOIN MenuCategory AS C ON M.CategoryID = C.MenuCategoryID " +
+                $"WHERE((M.CategoryID BETWEEN 1 AND 48) AND O.TableID = {tableNr}) AND OrderItems.[status] = 2";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }

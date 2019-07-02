@@ -47,9 +47,13 @@
             this.lblBackToPlan = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlCurrentOrdersList = new System.Windows.Forms.Panel();
+            this.lblVAT = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listViewCurrentOrder = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBackToCurrentOrder = new System.Windows.Forms.Label();
             this.lblTableNr = new System.Windows.Forms.Label();
             this.pnlLunchMenu = new System.Windows.Forms.Panel();
@@ -85,6 +89,19 @@
             this.lblSubmit = new System.Windows.Forms.Label();
             this.listViewCurrentOrderSubmition = new System.Windows.Forms.ListView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pnlPayment = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblTotPrice = new System.Windows.Forms.Label();
+            this.lblOrderNr = new System.Windows.Forms.Label();
+            this.lblPaymentMethod = new System.Windows.Forms.Label();
+            this.txtbTip = new System.Windows.Forms.TextBox();
+            this.txtbComment = new System.Windows.Forms.TextBox();
+            this.lbl = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnCredit = new CircularButton();
             this.btnPinPass = new CircularButton();
             this.btnCash = new CircularButton();
@@ -113,8 +130,6 @@
             this.btnOccupide = new CircularButton();
             this.btnTable2 = new CircularButton();
             this.btnTable1 = new CircularButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblVAT = new System.Windows.Forms.Label();
             this.pnlTablesPlan.SuspendLayout();
             this.pnlOrderdTable.SuspendLayout();
             this.pnlCurrentOrdersList.SuspendLayout();
@@ -123,6 +138,7 @@
             this.pnlDinnerMenu.SuspendLayout();
             this.pnlOrderMenu.SuspendLayout();
             this.pnlCurrentOrderSubmition.SuspendLayout();
+            this.pnlPayment.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTablesPlan
@@ -152,7 +168,7 @@
             this.pnlTablesPlan.Controls.Add(this.lblEmployeeNum);
             this.pnlTablesPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTablesPlan.Location = new System.Drawing.Point(0, 0);
-            this.pnlTablesPlan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTablesPlan.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTablesPlan.Name = "pnlTablesPlan";
             this.pnlTablesPlan.Size = new System.Drawing.Size(479, 881);
             this.pnlTablesPlan.TabIndex = 23;
@@ -161,7 +177,7 @@
             // 
             this.checkBOrdered.AutoSize = true;
             this.checkBOrdered.Location = new System.Drawing.Point(211, 704);
-            this.checkBOrdered.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBOrdered.Margin = new System.Windows.Forms.Padding(4);
             this.checkBOrdered.Name = "checkBOrdered";
             this.checkBOrdered.Size = new System.Drawing.Size(18, 17);
             this.checkBOrdered.TabIndex = 44;
@@ -171,7 +187,7 @@
             // 
             this.checkBFree.AutoSize = true;
             this.checkBFree.Location = new System.Drawing.Point(211, 545);
-            this.checkBFree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBFree.Margin = new System.Windows.Forms.Padding(4);
             this.checkBFree.Name = "checkBFree";
             this.checkBFree.Size = new System.Drawing.Size(18, 17);
             this.checkBFree.TabIndex = 42;
@@ -181,7 +197,7 @@
             // 
             this.checkBReserved.AutoSize = true;
             this.checkBReserved.Location = new System.Drawing.Point(211, 375);
-            this.checkBReserved.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBReserved.Margin = new System.Windows.Forms.Padding(4);
             this.checkBReserved.Name = "checkBReserved";
             this.checkBReserved.Size = new System.Drawing.Size(18, 17);
             this.checkBReserved.TabIndex = 40;
@@ -191,7 +207,7 @@
             // 
             this.checkBOccupide.AutoSize = true;
             this.checkBOccupide.Location = new System.Drawing.Point(211, 214);
-            this.checkBOccupide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBOccupide.Margin = new System.Windows.Forms.Padding(4);
             this.checkBOccupide.Name = "checkBOccupide";
             this.checkBOccupide.Size = new System.Drawing.Size(18, 17);
             this.checkBOccupide.TabIndex = 30;
@@ -265,7 +281,7 @@
             this.pnlOrderdTable.Controls.Add(this.label4);
             this.pnlOrderdTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOrderdTable.Location = new System.Drawing.Point(0, 0);
-            this.pnlOrderdTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlOrderdTable.Margin = new System.Windows.Forms.Padding(4);
             this.pnlOrderdTable.Name = "pnlOrderdTable";
             this.pnlOrderdTable.Size = new System.Drawing.Size(479, 881);
             this.pnlOrderdTable.TabIndex = 24;
@@ -363,16 +379,38 @@
             this.pnlCurrentOrdersList.Controls.Add(this.lblTableNr);
             this.pnlCurrentOrdersList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCurrentOrdersList.Location = new System.Drawing.Point(0, 0);
-            this.pnlCurrentOrdersList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCurrentOrdersList.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCurrentOrdersList.Name = "pnlCurrentOrdersList";
             this.pnlCurrentOrdersList.Size = new System.Drawing.Size(479, 881);
             this.pnlCurrentOrdersList.TabIndex = 25;
+            // 
+            // lblVAT
+            // 
+            this.lblVAT.AutoSize = true;
+            this.lblVAT.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVAT.Location = new System.Drawing.Point(363, 660);
+            this.lblVAT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVAT.Name = "lblVAT";
+            this.lblVAT.Size = new System.Drawing.Size(30, 35);
+            this.lblVAT.TabIndex = 26;
+            this.lblVAT.Text = "...";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(230, 660);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 35);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Total VAT:";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(184, 660);
+            this.lblTotalPrice.Location = new System.Drawing.Point(158, 660);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(30, 35);
@@ -393,12 +431,27 @@
             // listViewCurrentOrder
             // 
             this.listViewCurrentOrder.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.listViewCurrentOrder.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewCurrentOrder.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.listViewCurrentOrder.Location = new System.Drawing.Point(25, 176);
-            this.listViewCurrentOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewCurrentOrder.Margin = new System.Windows.Forms.Padding(4);
             this.listViewCurrentOrder.Name = "listViewCurrentOrder";
             this.listViewCurrentOrder.Size = new System.Drawing.Size(411, 441);
             this.listViewCurrentOrder.TabIndex = 2;
             this.listViewCurrentOrder.UseCompatibleStateImageBehavior = false;
+            this.listViewCurrentOrder.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Order";
+            this.columnHeader3.Width = 170;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Price";
+            this.columnHeader4.Width = 170;
             // 
             // lblBackToCurrentOrder
             // 
@@ -435,16 +488,17 @@
             this.pnlLunchMenu.Controls.Add(this.lblBackToMenusPage);
             this.pnlLunchMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLunchMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlLunchMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlLunchMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLunchMenu.Name = "pnlLunchMenu";
             this.pnlLunchMenu.Size = new System.Drawing.Size(479, 881);
             this.pnlLunchMenu.TabIndex = 28;
+            this.pnlLunchMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLunchMenu_Paint);
             // 
             // btnLunchBites
             // 
             this.btnLunchBites.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLunchBites.Location = new System.Drawing.Point(156, 865);
-            this.btnLunchBites.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLunchBites.Margin = new System.Windows.Forms.Padding(4);
             this.btnLunchBites.Name = "btnLunchBites";
             this.btnLunchBites.Size = new System.Drawing.Size(143, 58);
             this.btnLunchBites.TabIndex = 44;
@@ -456,7 +510,7 @@
             // 
             this.btnLunchSpecials.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLunchSpecials.Location = new System.Drawing.Point(291, 772);
-            this.btnLunchSpecials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLunchSpecials.Margin = new System.Windows.Forms.Padding(4);
             this.btnLunchSpecials.Name = "btnLunchSpecials";
             this.btnLunchSpecials.Size = new System.Drawing.Size(143, 58);
             this.btnLunchSpecials.TabIndex = 43;
@@ -468,7 +522,7 @@
             // 
             this.btnLunchMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLunchMain.Location = new System.Drawing.Point(25, 772);
-            this.btnLunchMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLunchMain.Margin = new System.Windows.Forms.Padding(4);
             this.btnLunchMain.Name = "btnLunchMain";
             this.btnLunchMain.Size = new System.Drawing.Size(143, 58);
             this.btnLunchMain.TabIndex = 42;
@@ -500,7 +554,7 @@
             this.listViewLunchMenu.HoverSelection = true;
             this.listViewLunchMenu.LabelEdit = true;
             this.listViewLunchMenu.Location = new System.Drawing.Point(21, 98);
-            this.listViewLunchMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewLunchMenu.Margin = new System.Windows.Forms.Padding(4);
             this.listViewLunchMenu.Name = "listViewLunchMenu";
             this.listViewLunchMenu.Size = new System.Drawing.Size(411, 644);
             this.listViewLunchMenu.TabIndex = 33;
@@ -539,7 +593,7 @@
             this.pnlDrinksMenu.Controls.Add(this.lblBackToMenuOrder);
             this.pnlDrinksMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDrinksMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlDrinksMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDrinksMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDrinksMenu.Name = "pnlDrinksMenu";
             this.pnlDrinksMenu.Size = new System.Drawing.Size(479, 881);
             this.pnlDrinksMenu.TabIndex = 33;
@@ -548,7 +602,7 @@
             // 
             this.btnDrinksWines.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDrinksWines.Location = new System.Drawing.Point(291, 865);
-            this.btnDrinksWines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDrinksWines.Margin = new System.Windows.Forms.Padding(4);
             this.btnDrinksWines.Name = "btnDrinksWines";
             this.btnDrinksWines.Size = new System.Drawing.Size(143, 58);
             this.btnDrinksWines.TabIndex = 45;
@@ -560,7 +614,7 @@
             // 
             this.btnDrinksBeers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDrinksBeers.Location = new System.Drawing.Point(25, 865);
-            this.btnDrinksBeers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDrinksBeers.Margin = new System.Windows.Forms.Padding(4);
             this.btnDrinksBeers.Name = "btnDrinksBeers";
             this.btnDrinksBeers.Size = new System.Drawing.Size(143, 58);
             this.btnDrinksBeers.TabIndex = 44;
@@ -572,7 +626,7 @@
             // 
             this.btnDrinksHotDrinks.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDrinksHotDrinks.Location = new System.Drawing.Point(291, 772);
-            this.btnDrinksHotDrinks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDrinksHotDrinks.Margin = new System.Windows.Forms.Padding(4);
             this.btnDrinksHotDrinks.Name = "btnDrinksHotDrinks";
             this.btnDrinksHotDrinks.Size = new System.Drawing.Size(143, 58);
             this.btnDrinksHotDrinks.TabIndex = 43;
@@ -584,7 +638,7 @@
             // 
             this.btnDrinksSoftDrinks.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDrinksSoftDrinks.Location = new System.Drawing.Point(25, 772);
-            this.btnDrinksSoftDrinks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDrinksSoftDrinks.Margin = new System.Windows.Forms.Padding(4);
             this.btnDrinksSoftDrinks.Name = "btnDrinksSoftDrinks";
             this.btnDrinksSoftDrinks.Size = new System.Drawing.Size(143, 58);
             this.btnDrinksSoftDrinks.TabIndex = 42;
@@ -614,7 +668,7 @@
             this.listViewDrinksMenu.GridLines = true;
             this.listViewDrinksMenu.HideSelection = false;
             this.listViewDrinksMenu.Location = new System.Drawing.Point(24, 108);
-            this.listViewDrinksMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewDrinksMenu.Margin = new System.Windows.Forms.Padding(4);
             this.listViewDrinksMenu.MultiSelect = false;
             this.listViewDrinksMenu.Name = "listViewDrinksMenu";
             this.listViewDrinksMenu.Size = new System.Drawing.Size(411, 640);
@@ -654,7 +708,7 @@
             this.pnlDinnerMenu.Controls.Add(this.lblBackToMenusPage1);
             this.pnlDinnerMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDinnerMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlDinnerMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDinnerMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDinnerMenu.Name = "pnlDinnerMenu";
             this.pnlDinnerMenu.Size = new System.Drawing.Size(479, 881);
             this.pnlDinnerMenu.TabIndex = 34;
@@ -663,7 +717,7 @@
             // 
             this.btnDinnerDesserts.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDinnerDesserts.Location = new System.Drawing.Point(156, 873);
-            this.btnDinnerDesserts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDinnerDesserts.Margin = new System.Windows.Forms.Padding(4);
             this.btnDinnerDesserts.Name = "btnDinnerDesserts";
             this.btnDinnerDesserts.Size = new System.Drawing.Size(143, 58);
             this.btnDinnerDesserts.TabIndex = 41;
@@ -675,7 +729,7 @@
             // 
             this.btnDinnerMains.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDinnerMains.Location = new System.Drawing.Point(291, 779);
-            this.btnDinnerMains.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDinnerMains.Margin = new System.Windows.Forms.Padding(4);
             this.btnDinnerMains.Name = "btnDinnerMains";
             this.btnDinnerMains.Size = new System.Drawing.Size(143, 58);
             this.btnDinnerMains.TabIndex = 40;
@@ -687,7 +741,7 @@
             // 
             this.btnDinnerStarters.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDinnerStarters.Location = new System.Drawing.Point(25, 779);
-            this.btnDinnerStarters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDinnerStarters.Margin = new System.Windows.Forms.Padding(4);
             this.btnDinnerStarters.Name = "btnDinnerStarters";
             this.btnDinnerStarters.Size = new System.Drawing.Size(143, 58);
             this.btnDinnerStarters.TabIndex = 39;
@@ -717,7 +771,7 @@
             this.listViewDinnerMenu.GridLines = true;
             this.listViewDinnerMenu.HideSelection = false;
             this.listViewDinnerMenu.Location = new System.Drawing.Point(24, 108);
-            this.listViewDinnerMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewDinnerMenu.Margin = new System.Windows.Forms.Padding(4);
             this.listViewDinnerMenu.Name = "listViewDinnerMenu";
             this.listViewDinnerMenu.Size = new System.Drawing.Size(411, 640);
             this.listViewDinnerMenu.TabIndex = 36;
@@ -754,7 +808,7 @@
             this.pnlOrderMenu.Controls.Add(this.btnLunchMenu);
             this.pnlOrderMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOrderMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlOrderMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlOrderMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlOrderMenu.Name = "pnlOrderMenu";
             this.pnlOrderMenu.Size = new System.Drawing.Size(479, 881);
             this.pnlOrderMenu.TabIndex = 35;
@@ -793,7 +847,7 @@
             this.pnlCurrentOrderSubmition.Controls.Add(this.listViewCurrentOrderSubmition);
             this.pnlCurrentOrderSubmition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCurrentOrderSubmition.Location = new System.Drawing.Point(0, 0);
-            this.pnlCurrentOrderSubmition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCurrentOrderSubmition.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCurrentOrderSubmition.Name = "pnlCurrentOrderSubmition";
             this.pnlCurrentOrderSubmition.Size = new System.Drawing.Size(479, 881);
             this.pnlCurrentOrderSubmition.TabIndex = 36;
@@ -827,7 +881,7 @@
             // listViewCurrentOrderSubmition
             // 
             this.listViewCurrentOrderSubmition.Location = new System.Drawing.Point(25, 124);
-            this.listViewCurrentOrderSubmition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewCurrentOrderSubmition.Margin = new System.Windows.Forms.Padding(4);
             this.listViewCurrentOrderSubmition.Name = "listViewCurrentOrderSubmition";
             this.listViewCurrentOrderSubmition.Size = new System.Drawing.Size(427, 659);
             this.listViewCurrentOrderSubmition.TabIndex = 0;
@@ -838,20 +892,167 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pnlPayment
+            // 
+            this.pnlPayment.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPayment.Controls.Add(this.label15);
+            this.pnlPayment.Controls.Add(this.label14);
+            this.pnlPayment.Controls.Add(this.lbl);
+            this.pnlPayment.Controls.Add(this.label13);
+            this.pnlPayment.Controls.Add(this.label12);
+            this.pnlPayment.Controls.Add(this.label11);
+            this.pnlPayment.Controls.Add(this.label10);
+            this.pnlPayment.Controls.Add(this.lblTotPrice);
+            this.pnlPayment.Controls.Add(this.lblOrderNr);
+            this.pnlPayment.Controls.Add(this.lblPaymentMethod);
+            this.pnlPayment.Controls.Add(this.txtbTip);
+            this.pnlPayment.Controls.Add(this.txtbComment);
+            this.pnlPayment.Location = new System.Drawing.Point(0, 0);
+            this.pnlPayment.Name = "pnlPayment";
+            this.pnlPayment.Size = new System.Drawing.Size(486, 885);
+            this.pnlPayment.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.label13.Location = new System.Drawing.Point(21, 169);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(209, 35);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Payment method:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.label12.Location = new System.Drawing.Point(21, 425);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(129, 35);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Comment:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.label11.Location = new System.Drawing.Point(19, 222);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(135, 35);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Total price:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.label10.Location = new System.Drawing.Point(25, 113);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 35);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "OrderNr:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // lblTotPrice
+            // 
+            this.lblTotPrice.AutoSize = true;
+            this.lblTotPrice.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblTotPrice.Location = new System.Drawing.Point(274, 222);
+            this.lblTotPrice.Name = "lblTotPrice";
+            this.lblTotPrice.Size = new System.Drawing.Size(94, 35);
+            this.lblTotPrice.TabIndex = 4;
+            this.lblTotPrice.Text = "label12";
+            // 
+            // lblOrderNr
+            // 
+            this.lblOrderNr.AutoSize = true;
+            this.lblOrderNr.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblOrderNr.Location = new System.Drawing.Point(274, 113);
+            this.lblOrderNr.Name = "lblOrderNr";
+            this.lblOrderNr.Size = new System.Drawing.Size(94, 35);
+            this.lblOrderNr.TabIndex = 3;
+            this.lblOrderNr.Text = "label11";
+            // 
+            // lblPaymentMethod
+            // 
+            this.lblPaymentMethod.AutoSize = true;
+            this.lblPaymentMethod.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lblPaymentMethod.Location = new System.Drawing.Point(274, 167);
+            this.lblPaymentMethod.Name = "lblPaymentMethod";
+            this.lblPaymentMethod.Size = new System.Drawing.Size(94, 35);
+            this.lblPaymentMethod.TabIndex = 2;
+            this.lblPaymentMethod.Text = "label10";
+            // 
+            // txtbTip
+            // 
+            this.txtbTip.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtbTip.Location = new System.Drawing.Point(273, 280);
+            this.txtbTip.Name = "txtbTip";
+            this.txtbTip.Size = new System.Drawing.Size(100, 41);
+            this.txtbTip.TabIndex = 1;
+            // 
+            // txtbComment
+            // 
+            this.txtbComment.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.txtbComment.Location = new System.Drawing.Point(31, 486);
+            this.txtbComment.Multiline = true;
+            this.txtbComment.Name = "txtbComment";
+            this.txtbComment.Size = new System.Drawing.Size(421, 256);
+            this.txtbComment.TabIndex = 0;
+            // 
+            // lbl
+            // 
+            this.lbl.AutoSize = true;
+            this.lbl.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.lbl.Location = new System.Drawing.Point(25, 283);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(49, 35);
+            this.lbl.TabIndex = 9;
+            this.lbl.Text = "Tip";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(156, 765);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(158, 54);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Submit";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(25, 47);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(95, 35);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "< Back";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
             // btnCredit
             // 
             this.btnCredit.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnCredit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCredit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCredit.Font = new System.Drawing.Font("Segoe UI", 8.5F);
             this.btnCredit.ForeColor = System.Drawing.Color.White;
             this.btnCredit.Location = new System.Drawing.Point(190, 766);
             this.btnCredit.Margin = new System.Windows.Forms.Padding(4);
             this.btnCredit.Name = "btnCredit";
-            this.btnCredit.Size = new System.Drawing.Size(93, 86);
+            this.btnCredit.Size = new System.Drawing.Size(99, 99);
             this.btnCredit.TabIndex = 24;
             this.btnCredit.Text = "Creditcard";
             this.btnCredit.UseVisualStyleBackColor = false;
+            this.btnCredit.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnPinPass
             // 
@@ -863,10 +1064,11 @@
             this.btnPinPass.Location = new System.Drawing.Point(313, 766);
             this.btnPinPass.Margin = new System.Windows.Forms.Padding(4);
             this.btnPinPass.Name = "btnPinPass";
-            this.btnPinPass.Size = new System.Drawing.Size(93, 86);
+            this.btnPinPass.Size = new System.Drawing.Size(99, 99);
             this.btnPinPass.TabIndex = 23;
             this.btnPinPass.Text = "Pin pass";
             this.btnPinPass.UseVisualStyleBackColor = false;
+            this.btnPinPass.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnCash
             // 
@@ -878,7 +1080,7 @@
             this.btnCash.Location = new System.Drawing.Point(57, 766);
             this.btnCash.Margin = new System.Windows.Forms.Padding(4);
             this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(93, 86);
+            this.btnCash.Size = new System.Drawing.Size(99, 99);
             this.btnCash.TabIndex = 22;
             this.btnCash.Text = "Cash";
             this.btnCash.UseVisualStyleBackColor = false;
@@ -1273,28 +1475,6 @@
             this.btnTable1.UseVisualStyleBackColor = false;
             this.btnTable1.Click += new System.EventHandler(this.btnTables_click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(235, 660);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 35);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Total VAT:";
-            // 
-            // lblVAT
-            // 
-            this.lblVAT.AutoSize = true;
-            this.lblVAT.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVAT.Location = new System.Drawing.Point(368, 660);
-            this.lblVAT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVAT.Name = "lblVAT";
-            this.lblVAT.Size = new System.Drawing.Size(30, 35);
-            this.lblVAT.TabIndex = 26;
-            this.lblVAT.Text = "...";
-            // 
             // Waiter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1302,6 +1482,7 @@
             this.BackgroundImage = global::Login.Properties.Resources.background3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(479, 881);
+            this.Controls.Add(this.pnlPayment);
             this.Controls.Add(this.pnlCurrentOrdersList);
             this.Controls.Add(this.pnlOrderdTable);
             this.Controls.Add(this.pnlDinnerMenu);
@@ -1312,7 +1493,7 @@
             this.Controls.Add(this.pnlTablesPlan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Waiter";
             this.Text = "Waiter";
             this.pnlTablesPlan.ResumeLayout(false);
@@ -1331,6 +1512,8 @@
             this.pnlOrderMenu.PerformLayout();
             this.pnlCurrentOrderSubmition.ResumeLayout(false);
             this.pnlCurrentOrderSubmition.PerformLayout();
+            this.pnlPayment.ResumeLayout(false);
+            this.pnlPayment.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1421,5 +1604,20 @@
         private CircularButton btnCredit;
         private System.Windows.Forms.Label lblVAT;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Panel pnlPayment;
+        private System.Windows.Forms.Label lblTotPrice;
+        private System.Windows.Forms.Label lblOrderNr;
+        private System.Windows.Forms.Label lblPaymentMethod;
+        private System.Windows.Forms.TextBox txtbTip;
+        private System.Windows.Forms.TextBox txtbComment;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.Label label15;
     }
 }

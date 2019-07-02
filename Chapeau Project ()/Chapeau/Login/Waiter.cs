@@ -86,6 +86,7 @@ namespace Login
             {
                 //Opens tables order
                 TablesOrder(button);
+                lblTablesNr.Text = table.tableID.ToString();
             }            
         }
         void TablesOrder(Button button)
@@ -110,6 +111,7 @@ namespace Login
             pnlOrderdTable.Hide();
             pnlOrderMenu.Hide();
             pnlTablesPlan.Hide();
+            pnlPayment.Hide();
 
             //Show pnl
             pnlName.Show();
@@ -282,7 +284,33 @@ namespace Login
 
         private void btnCash_Click(object sender, EventArgs e)
         {
+            var btn = (Button)sender;
+            CheckPayButton(btn);
+            int tableNr = int.Parse(lblTablesNr.Text.ToString());
+            OrderItems_Service orderItems_Service = new OrderItems_Service();
+            List<OrderItems> orderItems = orderItems_Service.GetDoneItems(tableNr);
 
+            lblOrderNr.Text = orderItems[0].OrderID.ToString();
+            lblTotPrice.Text = lblTotalPrice.Text;
+            ShowHidePnl(pnlPayment);
+        }
+
+        private void CheckPayButton(Button button)
+        {
+            string lbl = "";
+            switch (button.Name)
+            {
+                case "btnPinPass":
+                    lbl = "Pin pass";
+                    break;
+                case "btnCash":
+                    lbl = "Cash";
+                    break;
+                case "btnCredit":
+                    lbl = "Creditcard";
+                    break;
+            }
+            lblPaymentMethod.Text = lbl;
         }
 
         private void btnCurrentOrder_Click(object sender, EventArgs e)
@@ -293,19 +321,27 @@ namespace Login
             ChapeauLogic.MenuItem_Service menuItem_Service = new MenuItem_Service();
             List<ChapeauModel.MenuItem> menuItems = menuItem_Service.GetDoneItems(1, 10, tablenr);
 
-            int vat = 0;
+            decimal vat = 0;
             MenuICategory_Service menuICategory_Service = new MenuICategory_Service();
-            foreach (ChapeauModel.MenuItem item in menuItems)
-            {
-                List<MenuCategory> menuCategories = menuICategory_Service.GetVAT(item.CategoryID);
-                vat = vat + (int)menuCategories[0].VAT;
-            }
+            List<MenuCategory> menuCategories = menuICategory_Service.GetVAT(tablenr);
 
+            OrderItems_Service orderItems_Service = new OrderItems_Service();
+            List<OrderItems> OrderItems = orderItems_Service.GetDoneItems(tablenr);
+
+            foreach (MenuCategory item in menuCategories)
+            {
+                vat = vat + item.VAT;
+            }
             decimal price = 0;
             foreach (ChapeauModel.MenuItem item in menuItems)
             {
-                price = price + item.price;
+                price = price + (item.price);
             }
+            for (int i = 0; i < menuItems.Count; i++)
+            {
+                price = price + ((menuItems[i].price + menuCategories[i].VAT) * OrderItems[i].amount);
+            }
+
             //Clear the listview before filling it again
             listViewCurrentOrder.Clear();
 
@@ -319,10 +355,11 @@ namespace Login
             foreach (var Item in menuItems)
             {
                 ListViewItem li = new ListViewItem(Item.name);
-                li.SubItems.Add(Item.name);
-                li.SubItems.Add(Item.price.ToString());
+                li.SubItems.Add(Item.price.ToString());                
                 listViewCurrentOrder.Items.Add(li);
             }
+            lblVAT.Text = vat.ToString("0.00");
+            lblTotalPrice.Text = price.ToString("0.00");
         }
 
         private void lblBack_Click(object sender, EventArgs e)
@@ -522,6 +559,60 @@ namespace Login
         private void timer1_Tick(object sender, EventArgs e)
         {
             Start();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            string comment = txtbComment.Text;
+            int tableNr = int.Parse(lblTablesNr.Text);
+            OrderItems_Service orderItems_Service = new OrderItems_Service();
+            List<OrderItems> orderItems = orderItems_Service.GetDoneItems(tableNr);
+
+            decimal tip = 0;
+            if (txtbTip == null)
+            {
+                tip = 0;
+            }
+            else
+            {
+                tip = decimal.Parse(txtbTip.Text);
+            }
+
+
+            Payments payment = new Payments()
+            {
+                orderID = orderItems[0].OrderID,
+                orderPrice = decimal.Parse(lblTotalPrice.Text),
+                tip = tip,
+                PaymentType = lblPaymentMethod.Text
+            };
+
+            Payments_Service payments_Service = new Payments_Service();
+            payments_Service.AddPayment(payment);
+            orderItems_Service.ChangeStatus(3, payment.orderID, 1, 48);
+            orderItems_Service.AddComment(comment, payment.orderID);
+
+            ShowHidePnl(pnlTablesPlan);
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            ShowHidePnl(pnlCurrentOrdersList);
+        }
+
+        private void pnlLunchMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
