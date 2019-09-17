@@ -221,7 +221,7 @@ namespace Login
             List<Button> buttons = TablesButtons();
             var btn = (Button)sender;
 
-            int f = 0;
+            //int f = 0;
             for (int i = 1; i < 11; i++)
             {
                 if (btn.Name == buttons[i-1].Name)
